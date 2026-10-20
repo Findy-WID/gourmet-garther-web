@@ -13,7 +13,7 @@ const STEPS = [
 
 export default function Home() {
   const status = useStatus()
-  const popular = MENU.filter((m) => m.popular)
+  const popular = MENU.filter((m) => m.popular && m.available)
 
   return (
     <>

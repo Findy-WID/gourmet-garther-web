@@ -1,0 +1,396 @@
+{
+  "choices": [
+    {
+      "id": "plate-protein",
+      "name": "Plates: protein",
+      "label": "Choose your protein",
+      "options": [
+        {
+          "label": "Grilled chicken",
+          "price": 0
+        },
+        {
+          "label": "Peppered turkey",
+          "price": 1500
+        },
+        {
+          "label": "Beef (2 pieces)",
+          "price": -500
+        },
+        {
+          "label": "Fried croaker fish",
+          "price": 1000
+        },
+        {
+          "label": "Goat meat (2 pieces)",
+          "price": 1000
+        }
+      ]
+    },
+    {
+      "id": "ewa-protein",
+      "name": "Ewa agoyin: protein",
+      "label": "Add a protein",
+      "options": [
+        {
+          "label": "No protein",
+          "price": 0
+        },
+        {
+          "label": "Fried fish",
+          "price": 2500
+        },
+        {
+          "label": "Two boiled eggs",
+          "price": 800
+        }
+      ]
+    },
+    {
+      "id": "soup",
+      "name": "Soup choice",
+      "label": "Choose your soup",
+      "options": [
+        {
+          "label": "Egusi",
+          "price": 0
+        },
+        {
+          "label": "Efo riro",
+          "price": 500
+        },
+        {
+          "label": "Okra",
+          "price": 0
+        },
+        {
+          "label": "Ogbono",
+          "price": 0
+        },
+        {
+          "label": "Afang",
+          "price": 1000
+        }
+      ]
+    },
+    {
+      "id": "swallow",
+      "name": "Swallow choice",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Pounded yam",
+          "price": 0
+        },
+        {
+          "label": "Eba",
+          "price": 0
+        },
+        {
+          "label": "Amala",
+          "price": 0
+        },
+        {
+          "label": "Semo",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "id": "bucket-size",
+      "name": "Buckets: size",
+      "label": "Choose a size",
+      "options": [
+        {
+          "label": "Medium — serves 4 to 6",
+          "price": 0
+        },
+        {
+          "label": "Large — serves 8 to 10",
+          "price": 12000
+        }
+      ]
+    },
+    {
+      "id": "heat",
+      "name": "Pepper level",
+      "label": "How hot?",
+      "options": [
+        {
+          "label": "Mild",
+          "price": 0
+        },
+        {
+          "label": "Medium",
+          "price": 0
+        },
+        {
+          "label": "Very hot",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "id": "lunch-rice",
+      "name": "Lunch pack: rice",
+      "label": "Choose the rice",
+      "options": [
+        {
+          "label": "Party jollof",
+          "price": 0
+        },
+        {
+          "label": "Fried rice",
+          "price": 0
+        },
+        {
+          "label": "Half jollof, half fried",
+          "price": 0
+        },
+        {
+          "label": "Coconut rice",
+          "price": 500
+        }
+      ]
+    },
+    {
+      "id": "lunch-protein",
+      "name": "Lunch pack: protein",
+      "label": "Choose the protein",
+      "options": [
+        {
+          "label": "Chicken",
+          "price": 0
+        },
+        {
+          "label": "Turkey",
+          "price": 1500
+        },
+        {
+          "label": "Fried fish",
+          "price": 1000
+        }
+      ]
+    },
+    {
+      "id": "exec-main",
+      "name": "Executive box: main",
+      "label": "Choose the main",
+      "options": [
+        {
+          "label": "Party jollof",
+          "price": 0
+        },
+        {
+          "label": "Fried rice",
+          "price": 0
+        },
+        {
+          "label": "Ofada rice & ayamase",
+          "price": 1000
+        }
+      ]
+    },
+    {
+      "id": "chops-tray",
+      "name": "Small chops: tray size",
+      "label": "Tray size",
+      "options": [
+        {
+          "label": "50 pieces — about 10 people",
+          "price": 0
+        },
+        {
+          "label": "100 pieces — about 20 people",
+          "price": 32000
+        }
+      ]
+    },
+    {
+      "id": "feast-rice",
+      "name": "Party feast: rice",
+      "label": "Rice combination",
+      "options": [
+        {
+          "label": "Jollof + fried rice",
+          "price": 0
+        },
+        {
+          "label": "Jollof + coconut rice",
+          "price": 5000
+        }
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "id": "plate-extras",
+      "name": "Plates: extras",
+      "max": 0,
+      "items": [
+        {
+          "label": "Dodo (fried plantain)",
+          "price": 1000,
+          "note": ""
+        },
+        {
+          "label": "Moi moi",
+          "price": 1200,
+          "note": ""
+        },
+        {
+          "label": "Boiled egg",
+          "price": 400,
+          "note": ""
+        },
+        {
+          "label": "Coleslaw",
+          "price": 800,
+          "note": ""
+        },
+        {
+          "label": "Extra chicken",
+          "price": 3000,
+          "note": ""
+        },
+        {
+          "label": "Chilled soft drink",
+          "price": 700,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "soup-extras",
+      "name": "Soup & swallow: extras",
+      "max": 0,
+      "items": [
+        {
+          "label": "Extra wrap of swallow",
+          "price": 800,
+          "note": ""
+        },
+        {
+          "label": "Extra beef",
+          "price": 1000,
+          "note": ""
+        },
+        {
+          "label": "Extra fish",
+          "price": 3000,
+          "note": ""
+        },
+        {
+          "label": "Chilled soft drink",
+          "price": 700,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "bucket-proteins",
+      "name": "Buckets: proteins by the piece",
+      "max": 12,
+      "items": [
+        {
+          "label": "Chicken",
+          "price": 3000,
+          "note": "per piece"
+        },
+        {
+          "label": "Turkey",
+          "price": 4000,
+          "note": "per piece"
+        },
+        {
+          "label": "Beef",
+          "price": 1500,
+          "note": "per piece"
+        },
+        {
+          "label": "Goat meat",
+          "price": 2500,
+          "note": "per piece"
+        },
+        {
+          "label": "Croaker fish",
+          "price": 3000,
+          "note": "per piece"
+        },
+        {
+          "label": "Assorted (shaki, ponmo, beef)",
+          "price": 3500,
+          "note": "per portion"
+        }
+      ]
+    },
+    {
+      "id": "lunch-extras",
+      "name": "Lunch pack: extras",
+      "max": 0,
+      "items": [
+        {
+          "label": "Dodo",
+          "price": 800,
+          "note": "per pack"
+        },
+        {
+          "label": "Moi moi",
+          "price": 1000,
+          "note": "per pack"
+        },
+        {
+          "label": "Bottled water",
+          "price": 300,
+          "note": "per pack"
+        },
+        {
+          "label": "Soft drink",
+          "price": 600,
+          "note": "per pack"
+        }
+      ]
+    },
+    {
+      "id": "chops-extras",
+      "name": "Small chops: extras",
+      "max": 0,
+      "items": [
+        {
+          "label": "Extra dipping sauce",
+          "price": 1500,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "breakfast-extras",
+      "name": "Breakfast pack: extras",
+      "max": 0,
+      "items": [
+        {
+          "label": "Fruit juice",
+          "price": 700,
+          "note": "per pack"
+        }
+      ]
+    },
+    {
+      "id": "feast-extras",
+      "name": "Party feast: extras",
+      "max": 0,
+      "items": [
+        {
+          "label": "Crate of soft drinks",
+          "price": 9000,
+          "note": ""
+        },
+        {
+          "label": "Pack of bottled water",
+          "price": 3500,
+          "note": ""
+        }
+      ]
+    }
+  ]
+}

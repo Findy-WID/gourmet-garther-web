@@ -655,6 +655,34 @@ button {
   color: #fff;
 }
 
+.item-card__media {
+  position: relative;
+}
+.soldout-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.item-card.is-soldout .food-img {
+  filter: grayscale(0.8);
+  opacity: 0.7;
+}
+.item-card.is-soldout .item-card__cta {
+  background: #f1ebe8;
+  color: var(--muted);
+}
+.btn:disabled {
+  background: #d9cfcb;
+  color: #fff;
+  cursor: not-allowed;
+}
+
 /* Food image + placeholder */
 .food-img {
   width: 100%;

@@ -1,0 +1,17 @@
+{
+  "name": "Smoky Party Jollof",
+  "section": "plates",
+  "category": "Rice",
+  "price": 6500,
+  "unit": "1 plate",
+  "description": "Firewood-style jollof with that bottom-pot smokiness, served with your choice of protein.",
+  "image": "",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 10,
+  "choiceGroups": [
+    "plate-protein"
+  ],
+  "extrasGroup": "plate-extras"
+}

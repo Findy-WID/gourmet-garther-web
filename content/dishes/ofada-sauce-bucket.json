@@ -1,0 +1,17 @@
+{
+  "name": "Ofada Sauce Bucket",
+  "section": "buckets",
+  "category": "Stews & Sauces",
+  "price": 30000,
+  "unit": "About 2 litres",
+  "description": "Green pepper ayamase sauce with assorted meat. Pair with ofada rice.",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 140,
+  "choiceGroups": [
+    "bucket-size"
+  ],
+  "extrasGroup": "bucket-proteins"
+}

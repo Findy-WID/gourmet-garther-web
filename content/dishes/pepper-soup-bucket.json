@@ -1,0 +1,18 @@
+{
+  "name": "Goat Meat Pepper Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 26000,
+  "unit": "About 2 litres",
+  "description": "Peppery broth with uziza and scent leaf, and six pieces of goat meat.",
+  "image": "",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 150,
+  "choiceGroups": [
+    "bucket-size",
+    "heat"
+  ],
+  "extrasGroup": "bucket-proteins"
+}

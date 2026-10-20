@@ -1,0 +1,17 @@
+{
+  "name": "Efo Riro Bucket",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 30000,
+  "unit": "About 2 litres",
+  "description": "Spinach stew with locust beans, peppers and smoked fish.",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 120,
+  "choiceGroups": [
+    "bucket-size"
+  ],
+  "extrasGroup": "bucket-proteins"
+}

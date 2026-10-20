@@ -1,4 +1,7 @@
 import { OPENING_HOURS, TIMEZONE } from '../config'
+import { formatHour } from './format'
+
+export { formatHour }
 
 const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -18,12 +21,6 @@ export function lagosNow(date = new Date()) {
     hour: Number(get('hour')),
     minute: Number(get('minute')),
   }
-}
-
-export function formatHour(h) {
-  const suffix = h >= 12 ? 'pm' : 'am'
-  const hr = h % 12 === 0 ? 12 : h % 12
-  return `${hr}${suffix}`
 }
 
 // Returns { isOpen, closesAt, nextOpenLabel }

@@ -1,0 +1,17 @@
+{
+  "name": "Office Party Feast",
+  "section": "corporate",
+  "category": "Meetings & events",
+  "price": 180000,
+  "unit": "Serves about 20",
+  "description": "Two coolers of rice, a tray of proteins, dodo, salad and small chops for office celebrations.",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 200,
+  "choiceGroups": [
+    "feast-rice"
+  ],
+  "extrasGroup": "feast-extras"
+}

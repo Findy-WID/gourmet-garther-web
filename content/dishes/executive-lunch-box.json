@@ -1,0 +1,17 @@
+{
+  "name": "Executive Lunch Box",
+  "section": "corporate",
+  "category": "Lunch packs",
+  "price": 9500,
+  "unit": "Per box · minimum 10 boxes",
+  "description": "A fuller box for client visits and board days: rice, two proteins, salad, dodo and a drink.",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 10,
+  "sort": 170,
+  "choiceGroups": [
+    "exec-main"
+  ],
+  "extrasGroup": ""
+}

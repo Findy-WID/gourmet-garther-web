@@ -1,0 +1,19 @@
+{
+  "name": "Soup & Swallow",
+  "section": "plates",
+  "category": "Soups & Swallow",
+  "price": 7000,
+  "unit": "1 plate",
+  "description": "Your pick of soup with a wrap of swallow and one protein.",
+  "image": "",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 80,
+  "choiceGroups": [
+    "soup",
+    "swallow",
+    "plate-protein"
+  ],
+  "extrasGroup": "soup-extras"
+}

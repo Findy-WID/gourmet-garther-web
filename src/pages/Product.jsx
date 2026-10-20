@@ -163,9 +163,15 @@ function ProductView({ item }) {
                 <span>Total</span>
                 <strong>{formatNaira(unitPrice * qty)}</strong>
               </div>
-              <button className="btn btn--primary btn--block btn--lg" onClick={add}>
-                {status.isOpen ? 'Add to order' : 'Add to pre-order'} · {formatNaira(unitPrice * qty)}
-              </button>
+              {item.available ? (
+                <button className="btn btn--primary btn--block btn--lg" onClick={add}>
+                  {status.isOpen ? 'Add to order' : 'Add to pre-order'} · {formatNaira(unitPrice * qty)}
+                </button>
+              ) : (
+                <button className="btn btn--primary btn--block btn--lg" disabled>
+                  Sold out for now
+                </button>
+              )}
               {added && (
                 <div className="added-row">
                   <span>Added.</span>

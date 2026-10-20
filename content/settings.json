@@ -1,0 +1,18 @@
+{
+  "whatsapp": "2349034013321",
+  "whatsappDisplay": "+234 903 401 3321",
+  "tagline": "Hearty Nigerian plates, buckets and office meals, made fresh in Lagos.",
+  "city": "Lagos",
+  "pickupAddress": "",
+  "email": "",
+  "instagram": "",
+  "hours": {
+    "monday": { "closed": false, "open": 9, "close": 21 },
+    "tuesday": { "closed": false, "open": 9, "close": 21 },
+    "wednesday": { "closed": false, "open": 9, "close": 21 },
+    "thursday": { "closed": false, "open": 9, "close": 21 },
+    "friday": { "closed": false, "open": 9, "close": 21 },
+    "saturday": { "closed": false, "open": 9, "close": 21 },
+    "sunday": { "closed": false, "open": 13, "close": 21 }
+  }
+}

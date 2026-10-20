@@ -1,0 +1,286 @@
+# ─────────────────────────────────────────────────────────────
+# Gourmet Gather admin panel (Sveltia CMS)
+#
+# ONE THING TO SET: replace the repo below with your GitHub
+# username and repository name, e.g.  findy/gourmet-gather-web
+# ─────────────────────────────────────────────────────────────
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/gourmet-gather-web
+  branch: main
+  commit_messages:
+    create: 'Admin: add {{collection}} “{{slug}}”'
+    update: 'Admin: update {{collection}} “{{slug}}”'
+    delete: 'Admin: delete {{collection}} “{{slug}}”'
+    uploadMedia: 'Admin: upload “{{path}}”'
+    deleteMedia: 'Admin: delete “{{path}}”'
+
+logo:
+  src: /favicon.svg
+
+# Uploaded photos are saved to public/images and shown on the site as /images/…
+media_folder: public/images
+public_folder: /images
+
+collections:
+  # ── Dishes ────────────────────────────────────────────────
+  - name: dishes
+    label: Dishes
+    label_singular: Dish
+    description: Every meal on the menu. Change names, prices and photos here, or mark a dish as sold out.
+    folder: content/dishes
+    format: json
+    extension: json
+    create: true
+    delete: true
+    identifier_field: name
+    slug: '{{slug}}'
+    summary: '{{name}} — ₦{{price}}'
+    sortable_fields: [name, price, section, sort]
+    view_groups:
+      - { label: Menu section, field: section }
+    view_filters:
+      - { label: Sold out, field: available, pattern: false }
+      - { label: Most ordered, field: popular, pattern: true }
+    fields:
+      - { label: Dish name, name: name, widget: string }
+      - label: Photo
+        name: image
+        widget: image
+        required: false
+        hint: A square or landscape photo works best. Leave empty to show the drawn placeholder.
+      - label: Price (₦)
+        name: price
+        widget: number
+        value_type: int
+        min: 0
+        hint: Starting price in Naira, before choices and extras. Numbers only, e.g. 6500
+      - label: Menu section
+        name: section
+        widget: select
+        options:
+          - { label: Plates, value: plates }
+          - { label: Buckets, value: buckets }
+          - { label: Workplace / corporate, value: corporate }
+      - label: Category
+        name: category
+        widget: string
+        hint: The filter it appears under on the menu page, e.g. Rice, Soups, Lunch packs. Use the same spelling for dishes in the same category.
+      - label: Serving info
+        name: unit
+        widget: string
+        required: false
+        hint: Short line under the name, e.g. “1 plate” or “Serves 4 to 6”
+      - { label: Description, name: description, widget: text, required: false }
+      - label: Available to order
+        name: available
+        widget: boolean
+        default: true
+        hint: Switch off to show the dish as “Sold out” without deleting it.
+      - label: Show in “Most ordered” on the home page
+        name: popular
+        widget: boolean
+        default: false
+        required: false
+      - label: Minimum quantity
+        name: minQty
+        widget: number
+        value_type: int
+        default: 1
+        min: 1
+        hint: For workplace packs, e.g. 10
+      - label: Order on the menu
+        name: sort
+        widget: number
+        value_type: int
+        default: 500
+        hint: Lower numbers show first.
+      - label: Choices (customer picks one from each)
+        name: choiceGroups
+        widget: relation
+        collection: options
+        file: groups
+        multiple: true
+        required: false
+        value_field: '{{choices.*.id}}'
+        display_fields: ['{{choices.*.name}}']
+        search_fields: ['{{choices.*.name}}']
+        hint: e.g. “Plates — protein”. Edit the options and their prices under “Choices & extras”.
+      - label: Extras (optional add-ons)
+        name: extrasGroup
+        widget: relation
+        collection: options
+        file: groups
+        required: false
+        value_field: '{{extras.*.id}}'
+        display_fields: ['{{extras.*.name}}']
+        search_fields: ['{{extras.*.name}}']
+
+  # ── Shared choices and extras ─────────────────────────────
+  - name: options
+    label: Choices & extras
+    description: Protein choices, sizes, sides and add-ons shared between dishes. Changing a price here updates every dish that uses it.
+    files:
+      - name: groups
+        label: Choices & extras
+        file: content/option-groups.json
+        format: json
+        fields:
+          - label: Choices (customer picks one)
+            name: choices
+            widget: list
+            collapsed: true
+            summary: '{{fields.name}}'
+            fields:
+              - label: Name (admin only)
+                name: name
+                widget: string
+                hint: How you’ll find this group when linking it to a dish, e.g. “Plates — protein”.
+              - label: Code
+                name: id
+                widget: string
+                pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only']
+                hint: A short code, e.g. plate-protein. Don’t change it once dishes use it.
+              - label: Question shown to customers
+                name: label
+                widget: string
+                hint: e.g. “Choose your protein”
+              - label: Options
+                name: options
+                widget: list
+                summary: '{{fields.label}} ({{fields.price}})'
+                hint: The first option is selected by default.
+                fields:
+                  - { label: Option, name: label, widget: string }
+                  - label: Price change (₦)
+                    name: price
+                    widget: number
+                    value_type: int
+                    default: 0
+                    hint: Added to the dish price. 0 = no change. Use a minus number for cheaper, e.g. -500
+          - label: Extras (customer adds any quantity)
+            name: extras
+            widget: list
+            collapsed: true
+            summary: '{{fields.name}}'
+            fields:
+              - label: Name (admin only)
+                name: name
+                widget: string
+              - label: Code
+                name: id
+                widget: string
+                pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only']
+                hint: A short code, e.g. plate-extras. Don’t change it once dishes use it.
+              - label: Most pieces allowed in total
+                name: max
+                widget: number
+                value_type: int
+                default: 0
+                required: false
+                hint: 0 = no limit
+              - label: Items
+                name: items
+                widget: list
+                summary: '{{fields.label}} (₦{{fields.price}})'
+                fields:
+                  - { label: Item, name: label, widget: string }
+                  - { label: Price (₦), name: price, widget: number, value_type: int, min: 0 }
+                  - label: Note
+                    name: note
+                    widget: string
+                    required: false
+                    hint: Optional, e.g. “per piece”
+
+  # ── Restaurant settings ───────────────────────────────────
+  - name: settings
+    label: Restaurant settings
+    description: Opening hours, WhatsApp number and contact details.
+    files:
+      - name: settings
+        label: Restaurant settings
+        file: content/settings.json
+        format: json
+        fields:
+          - label: WhatsApp number for orders
+            name: whatsapp
+            widget: string
+            pattern: ['^[0-9]{10,15}$', 'Digits only, starting with the country code, e.g. 2349034013321']
+            hint: Digits only, with country code and no +, e.g. 2349034013321
+          - label: WhatsApp number as shown on the site
+            name: whatsappDisplay
+            widget: string
+            hint: e.g. +234 903 401 3321
+          - { label: Tagline, name: tagline, widget: text }
+          - { label: City, name: city, widget: string, default: Lagos }
+          - { label: Pickup address, name: pickupAddress, widget: string, required: false }
+          - { label: Email, name: email, widget: string, required: false }
+          - { label: Instagram link, name: instagram, widget: string, required: false }
+          - label: Opening hours (Lagos time)
+            name: hours
+            widget: object
+            hint: 24-hour clock. 9 = 9am, 13 = 1pm, 21 = 9pm. Visitors see “We’re closed” outside these hours and can still pre-order.
+            fields:
+              - label: Monday
+                name: monday
+                widget: object
+                collapsed: true
+                summary: "{{fields.open}}:00 – {{fields.close}}:00"
+                fields:
+                  - { label: Closed all day, name: closed, widget: boolean, default: false, required: false }
+                  - { label: Opens at (0–23), name: open, widget: number, value_type: int, min: 0, max: 23 }
+                  - { label: Closes at (1–24), name: close, widget: number, value_type: int, min: 1, max: 24 }
+              - label: Tuesday
+                name: tuesday
+                widget: object
+                collapsed: true
+                summary: "{{fields.open}}:00 – {{fields.close}}:00"
+                fields:
+                  - { label: Closed all day, name: closed, widget: boolean, default: false, required: false }
+                  - { label: Opens at (0–23), name: open, widget: number, value_type: int, min: 0, max: 23 }
+                  - { label: Closes at (1–24), name: close, widget: number, value_type: int, min: 1, max: 24 }
+              - label: Wednesday
+                name: wednesday
+                widget: object
+                collapsed: true
+                summary: "{{fields.open}}:00 – {{fields.close}}:00"
+                fields:
+                  - { label: Closed all day, name: closed, widget: boolean, default: false, required: false }
+                  - { label: Opens at (0–23), name: open, widget: number, value_type: int, min: 0, max: 23 }
+                  - { label: Closes at (1–24), name: close, widget: number, value_type: int, min: 1, max: 24 }
+              - label: Thursday
+                name: thursday
+                widget: object
+                collapsed: true
+                summary: "{{fields.open}}:00 – {{fields.close}}:00"
+                fields:
+                  - { label: Closed all day, name: closed, widget: boolean, default: false, required: false }
+                  - { label: Opens at (0–23), name: open, widget: number, value_type: int, min: 0, max: 23 }
+                  - { label: Closes at (1–24), name: close, widget: number, value_type: int, min: 1, max: 24 }
+              - label: Friday
+                name: friday
+                widget: object
+                collapsed: true
+                summary: "{{fields.open}}:00 – {{fields.close}}:00"
+                fields:
+                  - { label: Closed all day, name: closed, widget: boolean, default: false, required: false }
+                  - { label: Opens at (0–23), name: open, widget: number, value_type: int, min: 0, max: 23 }
+                  - { label: Closes at (1–24), name: close, widget: number, value_type: int, min: 1, max: 24 }
+              - label: Saturday
+                name: saturday
+                widget: object
+                collapsed: true
+                summary: "{{fields.open}}:00 – {{fields.close}}:00"
+                fields:
+                  - { label: Closed all day, name: closed, widget: boolean, default: false, required: false }
+                  - { label: Opens at (0–23), name: open, widget: number, value_type: int, min: 0, max: 23 }
+                  - { label: Closes at (1–24), name: close, widget: number, value_type: int, min: 1, max: 24 }
+              - label: Sunday
+                name: sunday
+                widget: object
+                collapsed: true
+                summary: "{{fields.open}}:00 – {{fields.close}}:00"
+                fields:
+                  - { label: Closed all day, name: closed, widget: boolean, default: false, required: false }
+                  - { label: Opens at (0–23), name: open, widget: number, value_type: int, min: 0, max: 23 }
+                  - { label: Closes at (1–24), name: close, widget: number, value_type: int, min: 1, max: 24 }

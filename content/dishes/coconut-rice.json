@@ -1,0 +1,17 @@
+{
+  "name": "Coconut Rice",
+  "section": "plates",
+  "category": "Rice",
+  "price": 7000,
+  "unit": "1 plate",
+  "description": "Rice cooked down in fresh coconut milk with smoked fish and peppers.",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 30,
+  "choiceGroups": [
+    "plate-protein"
+  ],
+  "extrasGroup": "plate-extras"
+}

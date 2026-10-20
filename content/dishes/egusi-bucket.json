@@ -1,0 +1,17 @@
+{
+  "name": "Egusi Soup Bucket",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 28000,
+  "unit": "About 2 litres",
+  "description": "Thick egusi with ugu and stockfish, cooked in palm oil. Freezer-friendly.",
+  "image": "",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 110,
+  "choiceGroups": [
+    "bucket-size"
+  ],
+  "extrasGroup": "bucket-proteins"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Party Jollof Bucket",
+  "section": "buckets",
+  "category": "Rice",
+  "price": 22000,
+  "unit": "Serves 4 to 6",
+  "description": "A full bucket of our smoky party jollof. Add proteins by the piece.",
+  "image": "",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 90,
+  "choiceGroups": [
+    "bucket-size"
+  ],
+  "extrasGroup": "bucket-proteins"
+}

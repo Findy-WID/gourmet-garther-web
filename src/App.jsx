@@ -12,6 +12,14 @@ import Workplace from './pages/Workplace'
 import Checkout from './pages/Checkout'
 import NotFound from './pages/NotFound'
 
+// /admin is a separate app in public/admin — leave the React site to load it
+function AdminRedirect() {
+  useEffect(() => {
+    window.location.replace('/admin/index.html')
+  }, [])
+  return null
+}
+
 function ScrollManager() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
@@ -42,6 +50,7 @@ export default function App() {
           <Route path="/menu/:id" element={<Product />} />
           <Route path="/workplace" element={<Workplace />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/admin" element={<AdminRedirect />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

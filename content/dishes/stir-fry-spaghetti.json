@@ -1,0 +1,17 @@
+{
+  "name": "Stir-fry Spaghetti",
+  "section": "plates",
+  "category": "Pasta",
+  "price": 6000,
+  "unit": "1 plate",
+  "description": "Spaghetti tossed with peppers, onions and sautéed vegetables.",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 50,
+  "choiceGroups": [
+    "plate-protein"
+  ],
+  "extrasGroup": "plate-extras"
+}

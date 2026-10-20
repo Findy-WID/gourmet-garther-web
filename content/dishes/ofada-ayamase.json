@@ -1,0 +1,17 @@
+{
+  "name": "Ofada Rice & Ayamase",
+  "section": "plates",
+  "category": "Rice",
+  "price": 7500,
+  "unit": "1 plate",
+  "description": "Local ofada rice with green pepper ayamase sauce, assorted meat and boiled egg.",
+  "image": "",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 40,
+  "choiceGroups": [
+    "plate-protein"
+  ],
+  "extrasGroup": "plate-extras"
+}
