@@ -47,7 +47,7 @@ export function lineDetail(line) {
 }
 
 // Builds the WhatsApp message the cashier receives.
-export function buildWhatsAppMessage({ details, lines, subtotal, reference, isPreorder }) {
+export function buildWhatsAppMessage({ details, lines, subtotal, reference, isPreorder, promo, discount = 0, repeatDevice = false }) {
   const type = ORDER_TYPES.find((t) => t.id === details.orderType)?.label
   const out = []
   out.push(`*New order — ${RESTAURANT.name}*`)
@@ -60,7 +60,18 @@ export function buildWhatsAppMessage({ details, lines, subtotal, reference, isPr
     if (detail) out.push(`   ${detail}`)
   })
   out.push('')
-  out.push(`*Subtotal: ${formatNaira(subtotal)}*`)
+  if (discount > 0) {
+    out.push(`Subtotal: ${formatNaira(subtotal)}`)
+    out.push(`First-order code ${promo.code}: −${formatNaira(discount)} (${promo.percent}%)`)
+    out.push(`*Total: ${formatNaira(subtotal - discount)}*`)
+    out.push(
+      repeatDevice
+        ? '⚠ Please check this is a first order: this device has ordered before.'
+        : 'Please check this is the customer’s first order.',
+    )
+  } else {
+    out.push(`*Total: ${formatNaira(subtotal)}*`)
+  }
   if (details.fulfilment === 'delivery') out.push('Delivery fee: to be confirmed')
   out.push('')
   out.push('*Order type*')
@@ -74,7 +85,7 @@ export function buildWhatsAppMessage({ details, lines, subtotal, reference, isPr
     if (details.landmark) out.push(`Landmark: ${details.landmark}`)
   } else {
     out.push('*Pickup*')
-    out.push('Customer will pick up')
+    out.push('Customer will pick up from the kitchen')
   }
   out.push('')
   out.push('*Customer*')

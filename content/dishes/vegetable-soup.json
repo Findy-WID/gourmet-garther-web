@@ -1,0 +1,17 @@
+{
+  "name": "Vegetable Soup",
+  "section": "plates",
+  "category": "Soups",
+  "price": 6500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 404,
+  "choiceGroups": [
+    "swallow-vegetable"
+  ],
+  "extrasGroup": "soup-extras"
+}

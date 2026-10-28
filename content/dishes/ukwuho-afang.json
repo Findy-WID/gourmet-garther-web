@@ -1,0 +1,15 @@
+{
+  "name": "Ukwuho Afang",
+  "section": "plates",
+  "category": "Soups",
+  "price": 8600,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 402,
+  "choiceGroups": [],
+  "extrasGroup": "soup-extras"
+}

@@ -3,12 +3,14 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { RESTAURANT } from '../config'
 import { useCart } from '../context/CartContext'
 import { useStatus } from '../lib/useStatus'
+import Logo from './Logo'
 
 const LINKS = [
   { to: '/menu?tab=plates', label: 'Plates' },
   { to: '/menu?tab=buckets', label: 'Buckets' },
   { to: '/workplace', label: 'Workplace' },
-  { to: '/#how-it-works', label: 'How ordering works' },
+  { to: '/about', label: 'About' },
+  { to: '/careers', label: 'Careers' },
 ]
 
 export default function Header() {
@@ -30,8 +32,8 @@ export default function Header() {
         )}
       </div>
       <div className="header-bar container">
-        <Link to="/" className="wordmark" aria-label={`${RESTAURANT.name} home`}>
-          Gourmet<span>Gather</span>
+        <Link to="/" className="logo-link" aria-label={`${RESTAURANT.name} home`}>
+          <Logo />
         </Link>
 
         <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Main">

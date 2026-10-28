@@ -18,7 +18,8 @@ export default function Workplace() {
   return (
     <div className="page">
       <section className="work-hero">
-        <div className="container">
+        <div className="container work-hero__grid">
+          <div>
           <h1>Lunch for the whole office, sorted.</h1>
           <p>
             Packed lunches, meeting trays and office party feasts, delivered to your workplace in {RESTAURANT.city}.
@@ -37,6 +38,8 @@ export default function Workplace() {
               Ask about a custom plan
             </a>
           </div>
+          </div>
+          <img className="work-hero__img" src="/images/site/plating.webp" alt="The Gourmet Gather team plating meals for an event" />
         </div>
       </section>
 

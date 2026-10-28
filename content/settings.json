@@ -1,18 +1,61 @@
 {
+  "tagline": "Where Taste Meets Tradition",
+  "intro": "Hearty Nigerian plates, buckets and office meals, cooked fresh in our kitchen in Uyo.",
+  "city": "Uyo",
+  "address": "90 Udoumana Street, opposite the Church of Jesus Christ of Latter-day Saints, Uyo",
   "whatsapp": "2349034013321",
   "whatsappDisplay": "+234 903 401 3321",
-  "tagline": "Hearty Nigerian plates, buckets and office meals, made fresh in Lagos.",
-  "city": "Lagos",
-  "pickupAddress": "",
-  "email": "",
-  "instagram": "",
+  "email": "gourmetgather01@gmail.com",
+  "socials": {
+    "instagram": "https://www.instagram.com/gourmetgather/",
+    "tiktok": "https://www.tiktok.com/@gourmetgather",
+    "facebook": "https://www.facebook.com/share/1BpEDE8pF6/"
+  },
+  "promo": {
+    "enabled": true,
+    "code": "GOURMET",
+    "percent": 10,
+    "banner": "First time here? Get 10% off your first order with code"
+  },
+  "eta": {
+    "platesMinutes": 60,
+    "bucketsMinutes": 90
+  },
   "hours": {
-    "monday": { "closed": false, "open": 9, "close": 21 },
-    "tuesday": { "closed": false, "open": 9, "close": 21 },
-    "wednesday": { "closed": false, "open": 9, "close": 21 },
-    "thursday": { "closed": false, "open": 9, "close": 21 },
-    "friday": { "closed": false, "open": 9, "close": 21 },
-    "saturday": { "closed": false, "open": 9, "close": 21 },
-    "sunday": { "closed": false, "open": 13, "close": 21 }
+    "monday": {
+      "closed": false,
+      "open": 9,
+      "close": 21
+    },
+    "tuesday": {
+      "closed": false,
+      "open": 9,
+      "close": 21
+    },
+    "wednesday": {
+      "closed": false,
+      "open": 9,
+      "close": 21
+    },
+    "thursday": {
+      "closed": false,
+      "open": 9,
+      "close": 21
+    },
+    "friday": {
+      "closed": false,
+      "open": 9,
+      "close": 21
+    },
+    "saturday": {
+      "closed": false,
+      "open": 9,
+      "close": 21
+    },
+    "sunday": {
+      "closed": false,
+      "open": 13,
+      "close": 21
+    }
   }
 }

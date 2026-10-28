@@ -1,0 +1,15 @@
+{
+  "name": "Vegetable Sauce",
+  "section": "plates",
+  "category": "Sauces & stews",
+  "price": 4000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 601,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

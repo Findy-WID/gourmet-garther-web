@@ -74,7 +74,22 @@ export default function Menu() {
           </div>
         </div>
 
-        {items.length ? (
+        {items.length && group === 'All' && !query.trim() ? (
+          groups.slice(1).map((g) => (
+            <section key={g} className="menu-group" aria-labelledby={`grp-${g}`}>
+              <h2 id={`grp-${g}`} className="menu-group__title">
+                {g}
+              </h2>
+              <div className="grid">
+                {items
+                  .filter((m) => m.group === g)
+                  .map((item) => (
+                    <ItemCard key={item.id} item={item} />
+                  ))}
+              </div>
+            </section>
+          ))
+        ) : items.length ? (
           <div className="grid">
             {items.map((item) => (
               <ItemCard key={item.id} item={item} />

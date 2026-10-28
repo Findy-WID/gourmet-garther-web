@@ -1,0 +1,124 @@
+{
+  "placeholder": false,
+  "title": "Our story",
+  "intro": "Long before there was a kitchen, there was a belief: the food on your plate can either shorten your life or lengthen it.",
+  "image": "/images/site/diners-mural.webp",
+  "heroImages": [
+    {
+      "src": "/images/site/diners-mural.webp",
+      "alt": "Guests dining under the “Where Taste Meets Tradition” mural"
+    },
+    {
+      "src": "/images/site/diners-2.webp",
+      "alt": "Friends sharing a meal at Gourmet Gather"
+    },
+    {
+      "src": "/images/site/catering.webp",
+      "alt": "The Gourmet Gather team preparing plates for an event"
+    }
+  ],
+  "story": {
+    "heading": "How we started",
+    "paragraphs": [
+      "Our Chief Visionary Officer, Peter Samuel, grew up hearing about the way our forefathers ate. Their meals were simple and made from fresh, traditional ingredients, and the people who ate them lived longer than many do today. Somewhere along the way, those meals faded from our tables, replaced by fast, heavily processed food and dishes this new generation has barely heard of. He couldn’t shake the question: what if we brought them back?",
+      "For years, he carried the dream of a food business that did more than feed people. He wanted a place where every meal was a step toward better health, where eating well meant living well, and living longer.",
+      "Then the dream became a plan. With a small, passionate team, he went back to the roots. They sought out fresh, carefully sourced ingredients and revived the forgotten recipes of our ancestors, while adding intercontinental dishes made with the same care.",
+      "Today, every plate we serve carries the belief that started it all: good food is more than a meal. It’s a gift of health, a link to our heritage, and a chance to live better, one meal at a time."
+    ],
+    "milestone": {
+      "date": "13 December 2024",
+      "text": "Gourmet Gather Restaurant and Catering Services officially opened its doors."
+    }
+  },
+  "gallery": [
+    {
+      "src": "/images/site/team.webp",
+      "alt": "The Gourmet Gather kitchen team"
+    },
+    {
+      "src": "/images/site/dining-room.webp",
+      "alt": "The dining room"
+    },
+    {
+      "src": "/images/site/storefront.webp",
+      "alt": "Gourmet Gather storefront"
+    },
+    {
+      "src": "/images/site/counter.webp",
+      "alt": "The service counter"
+    }
+  ],
+  "cook": {
+    "heading": "What we cook",
+    "intro": "Native dishes made the way they were meant to be, alongside intercontinental favourites cooked with the same care. Here are a few highlights.",
+    "highlights": [
+      {
+        "title": "Mushroom Soup & Mushroom Pepper Soup",
+        "body": "Made with fresh mushrooms and carefully sourced traditional ingredients: light, rich in flavour and nourishing. Have the classic, or the pepper soup if you like a little heat. We also make other mushroom dishes, like mushroom stew.",
+        "link": "/menu/mushroom-soup"
+      },
+      {
+        "title": "Ukwuho Afang",
+        "body": "A thicker, richer take on the beloved afang soup, made with fresh afang leaves from the southern parts of the country and cooked with local, traditional ingredients for a deep, authentic taste.",
+        "link": "/menu/ukwuho-afang"
+      },
+      {
+        "title": "Abak Atama",
+        "body": "Cooked with palm kernel juice and other traditional ingredients into a soup that is rich, earthy and full of heritage. A dish that brings back the good old days.",
+        "link": "/menu/abak-atama"
+      },
+      {
+        "title": "Many more soups",
+        "body": "White soup, bitter leaf soup, editan soup, egusi soup and others, each prepared the traditional way.",
+        "link": "/menu?tab=plates"
+      },
+      {
+        "title": "Rice dishes",
+        "body": "Jollof rice, fried rice, ofada rice and seafood rice, plus our Signature Rice, made from our own recipe and found only at Gourmet Gather.",
+        "link": "/menu/gourmet-signature-rice"
+      },
+      {
+        "title": "Intercontinental meals",
+        "body": "For a taste of the world: jambalaya rice, oriental fried rice, spaghetti bolognese and other global favourites.",
+        "link": "/menu/jambalaya-rice"
+      },
+      {
+        "title": "Special dishes",
+        "body": "Ekpang Nkukwo and other specials, cooked on set days of the week.",
+        "link": "/menu/ekpang-nkukwo"
+      }
+    ]
+  },
+  "who": {
+    "heading": "Who we cook for",
+    "groups": [
+      {
+        "title": "Individuals and families",
+        "body": "From a quiet breakfast, lunch or dinner to a family gathering, our traditional dishes and intercontinental favourites are made fresh to nourish you and the people you love."
+      },
+      {
+        "title": "Corporate organisations",
+        "body": "Reliable, professionally prepared meals for staff, meetings and corporate functions, so your people are well fed and your schedule stays on track. After all, good food keeps a team organised."
+      },
+      {
+        "title": "Indoor and outdoor events",
+        "body": "Weddings, birthdays, receptions, anniversaries and more: we cater them all. Our team handles the food so you can focus on your guests and enjoy the occasion."
+      }
+    ],
+    "cta": "Planning a meal, a staff catering plan or an event? Request a catering quote or place an order today, and let us serve you."
+  },
+  "values": [
+    {
+      "title": "On time",
+      "body": "Every pickup and delivery comes with a clear time. Plates are usually delivered within 1 hour and buckets within 1.5 hours. At busy times it can take a little longer, and we’ll always keep you updated."
+    },
+    {
+      "title": "Real recipes, local ingredients",
+      "body": "We buy from local farmers and suppliers wherever we can. It keeps our ingredients fresh, and it supports our local community."
+    }
+  ],
+  "different": {
+    "heading": "What makes us different",
+    "body": "Every dish is made with fresh, carefully sourced ingredients and recipes that honour our heritage, so you get food that tastes good and does you good."
+  }
+}

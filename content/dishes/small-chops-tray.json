@@ -5,13 +5,14 @@
   "price": 35000,
   "unit": "50 pieces · serves about 10",
   "description": "Puff-puff, samosa, spring rolls, peppered gizzard and chicken wings on one tray.",
-  "image": "",
-  "popular": true,
+  "image": "/images/menu/small-chops-tray.webp",
+  "popular": false,
   "available": true,
   "minQty": 1,
   "sort": 180,
   "choiceGroups": [
     "chops-tray"
   ],
-  "extrasGroup": "chops-extras"
+  "extrasGroup": "chops-extras",
+  "placeholder": true
 }

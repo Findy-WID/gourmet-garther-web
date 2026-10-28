@@ -33,9 +33,11 @@ Every save is a commit to GitHub. Vercel rebuilds automatically, and the change 
 Anyone signing in needs write access to the repo. For non-technical staff, a "Sign In with GitHub" button
 can be enabled later with the free Sveltia CMS Authenticator (see sveltiacms.app docs).
 
-### Editing locally (before the site is on GitHub)
+### Editing locally
+The folder must be a Git repository first (it will be once you've set it up for GitHub, or run `git init`).
 Run `npm run dev`, open `http://localhost:5173/admin/index.html` in Chrome or Edge, choose
-**Work with Local Repository** and select this project folder. Edits are written straight into the files here.
+**Work with Local Repository** and select this project folder. Edits are written straight into the files here;
+commit and push them as usual.
 
 ## Where things live in the code
 
@@ -43,15 +45,23 @@ Run `npm run dev`, open `http://localhost:5173/admin/index.html` in Chrome or Ed
 | --- | --- |
 | Dishes (one file each) | `content/dishes/*.json` |
 | Shared choices & extras | `content/option-groups.json` |
-| Hours, WhatsApp number, contact | `content/settings.json` |
+| Hours, WhatsApp, email, address, socials, promo code | `content/settings.json` |
+| About page text | `content/about.json` |
+| Careers / job openings | `content/careers.json` |
 | Photos | `public/images/` |
 | Restaurant name | `src/config.js` |
 | Colours and fonts | top of `src/index.css` |
 | WhatsApp message wording | `src/lib/order.js` → `buildWhatsAppMessage` |
 | Admin panel fields | `public/admin/config.yml` |
 
+## First-order discount (GOURMET)
+The banner shows on devices that haven't sent an order yet (until the visitor closes it).
+At checkout the customer types the code, sees the discount, and the WhatsApp message tells the cashier
+the code was used. If the same device has ordered before, the message says so. The cashier confirms it's a
+first order using the customer's phone number. Turn the offer off or change the code in `content/settings.json`.
+
 ## How open / closed works
-Hours are checked against Lagos time (Africa/Lagos), whatever timezone the visitor is in.
+Hours are checked against Nigeria time (WAT, called "Africa/Lagos" in software, which covers Uyo too), whatever timezone the visitor is in.
 When closed, visitors see a pop-up once per visit, buttons say "Pre-order", and the WhatsApp message is marked
 as a pre-order.
 
@@ -62,4 +72,3 @@ so page links like `/menu` work on refresh.
 ## Online payments later
 Checkout lives in `src/pages/Checkout.jsx`. A payment step (e.g. Paystack) can be added on the review step,
 before or instead of the WhatsApp button.
-# gourmet-garther-web

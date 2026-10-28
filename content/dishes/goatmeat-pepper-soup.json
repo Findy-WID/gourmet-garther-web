@@ -1,0 +1,15 @@
+{
+  "name": "Goatmeat Pepper Soup",
+  "section": "plates",
+  "category": "Pepper soups",
+  "price": 9500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 502,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

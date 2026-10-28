@@ -1,0 +1,15 @@
+{
+  "name": "Beef Stew",
+  "section": "plates",
+  "category": "Sides & combos",
+  "price": 11600,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 710,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

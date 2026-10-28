@@ -1,8 +1,8 @@
 // Shows the dish photo if one is set in menu.js, otherwise a drawn placeholder.
 const TINTS = {
-  plates: { bg: '#FFE7E2', plate: '#FFFFFF', food: '#D62718', accent: '#F5B60F' },
-  buckets: { bg: '#FFF2CC', plate: '#FFFFFF', food: '#B81E12', accent: '#D62718' },
-  corporate: { bg: '#F3E9E4', plate: '#FFFFFF', food: '#2A1A16', accent: '#D62718' },
+  plates: { bg: '#FFE9E6', plate: '#FFFFFF', food: '#E60000', accent: '#F19100' },
+  buckets: { bg: '#FFF3E0', plate: '#FFFFFF', food: '#E60000', accent: '#F19100' },
+  corporate: { bg: '#EAF7EC', plate: '#FFFFFF', food: '#1AA32E', accent: '#F19100' },
 }
 
 export default function FoodImage({ item, className = '' }) {

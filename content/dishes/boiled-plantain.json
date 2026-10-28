@@ -1,0 +1,15 @@
+{
+  "name": "Boiled Plantain",
+  "section": "plates",
+  "category": "Sides & combos",
+  "price": 2000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 712,
+  "choiceGroups": [],
+  "extrasGroup": ""
+}

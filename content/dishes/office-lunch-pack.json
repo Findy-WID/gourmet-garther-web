@@ -6,7 +6,7 @@
   "unit": "Per pack · minimum 10 packs",
   "description": "Individually packed lunches for the team, each labelled. Rice, one protein and a side.",
   "image": "",
-  "popular": true,
+  "popular": false,
   "available": true,
   "minQty": 10,
   "sort": 160,
@@ -14,5 +14,6 @@
     "lunch-rice",
     "lunch-protein"
   ],
-  "extrasGroup": "lunch-extras"
+  "extrasGroup": "lunch-extras",
+  "placeholder": true
 }

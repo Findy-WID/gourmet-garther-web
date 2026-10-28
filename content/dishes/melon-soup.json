@@ -1,0 +1,17 @@
+{
+  "name": "Melon Soup",
+  "section": "plates",
+  "category": "Soups",
+  "price": 5500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "/images/menu/melon-soup.webp",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 409,
+  "choiceGroups": [
+    "swallow-basic"
+  ],
+  "extrasGroup": "soup-extras"
+}

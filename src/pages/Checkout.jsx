@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useStatus } from '../lib/useStatus'
-import { OPENING_HOURS, RESTAURANT, TIMEZONE, formatNaira } from '../config'
-import { formatHour, lagosNow } from '../lib/hours'
+import { ETA, OPENING_HOURS, PROMO, RESTAURANT, TIMEZONE, formatNaira } from '../config'
+import { formatHour, nigeriaNow } from '../lib/hours'
 import {
   ORDER_TYPES,
   WEEKDAYS,
@@ -13,6 +13,8 @@ import {
   scheduleText,
   whatsappLink,
 } from '../lib/order'
+import { checkPromo, discountFor, hasOrderedBefore, markOrdered } from '../lib/promo'
+import { daysLabel } from '../data/menu'
 
 const DETAILS_KEY = 'gg-checkout-details'
 
@@ -33,7 +35,7 @@ const EMPTY = {
   notes: '',
 }
 
-function todayInLagos() {
+function todayInNigeria() {
   return new Intl.DateTimeFormat('en-CA', { timeZone: TIMEZONE }).format(new Date())
 }
 
@@ -71,9 +73,29 @@ export default function Checkout() {
   const [errors, setErrors] = useState({})
   const [step, setStep] = useState('details') // details → review → sent
   const [sent, setSent] = useState(null)
+  const [promoInput, setPromoInput] = useState(d.promoCode || '')
+  const [promoFeedback, setPromoFeedback] = useState(null)
+  const promo = useMemo(() => checkPromo(d.promoCode), [d.promoCode])
+  const discount = discountFor(subtotal, promo)
+  const total = subtotal - discount
+
+  function applyPromo(e) {
+    e.preventDefault()
+    const result = checkPromo(promoInput)
+    setPromoFeedback(result)
+    setD((s) => ({ ...s, promoCode: result.valid ? result.code : '' }))
+  }
+
+  function removePromo() {
+    setD((s) => ({ ...s, promoCode: '' }))
+    setPromoInput('')
+    setPromoFeedback(null)
+  }
 
   const hasCorporate = lines.some((l) => l.section === 'corporate')
-  const today = todayInLagos()
+  const etaMinutes = lines.some((l) => l.section !== 'plates') ? ETA.buckets : ETA.plates
+  const etaText = etaMinutes % 60 === 0 ? `${etaMinutes / 60} hour${etaMinutes > 60 ? 's' : ''}` : `${etaMinutes / 60} hours`
+  const today = todayInNigeria()
   const timing = status.isOpen ? d.timing : 'later'
 
   useEffect(() => {
@@ -97,7 +119,7 @@ export default function Checkout() {
     const all = slotsFor(slotDay)
     if (d.date !== today) return all
     // For today, only offer times at least an hour from now
-    const { hour, minute } = lagosNow()
+    const { hour, minute } = nigeriaNow()
     const cutoff = hour * 60 + minute + 60
     return all.filter((s) => {
       const [h, m] = s.value.split(':').map(Number)
@@ -123,6 +145,24 @@ export default function Checkout() {
     if (d.orderType === 'weekly' && d.date && dayOfWeek(d.date) !== (WEEKDAYS.indexOf(d.weekday) + 1) % 7)
       er.date = `The start date should be a ${d.weekday}.`
     if (needsDate && !d.time) er.time = 'Pick a time.'
+    // Dishes only cooked on certain days (e.g. Mushroom Soup on Fridays)
+    const orderDay =
+      d.orderType === 'weekly'
+        ? (WEEKDAYS.indexOf(d.weekday) + 1) % 7
+        : timing === 'asap' && d.orderType === 'once'
+          ? nigeriaNow().day
+          : d.date
+            ? dayOfWeek(d.date)
+            : null
+    if (orderDay !== null) {
+      const dayName = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][orderDay]
+      const clash = lines.find((l) => l.days?.length && !l.days.includes(dayName))
+      if (clash) {
+        const msg = `${clash.name} is only cooked on ${daysLabel(clash.days).replace(/ only$/, '')}. Pick one of those days, or remove it from your order.`
+        if (timing === 'asap' && d.orderType === 'once') er.timing = msg
+        else er.date = msg
+      }
+    }
     setErrors(er)
     return Object.keys(er).length === 0
   }
@@ -143,11 +183,16 @@ export default function Checkout() {
       subtotal,
       reference,
       isPreorder: !status.isOpen,
+      promo,
+      discount,
+      repeatDevice: hasOrderedBefore(),
     })
     const link = whatsappLink(message)
     window.open(link, '_blank', 'noopener')
-    setSent({ reference, link, total: subtotal })
+    setSent({ reference, link, total })
     setStep('sent')
+    markOrdered()
+    setD((s) => ({ ...s, promoCode: '' }))
     clear()
   }
 
@@ -205,10 +250,58 @@ export default function Checkout() {
           </li>
         ))}
       </ul>
-      <div className="summary__row summary__total">
+      <div className="summary__row summary__sub">
         <span>Subtotal</span>
-        <strong>{formatNaira(subtotal)}</strong>
+        <span>{formatNaira(subtotal)}</span>
       </div>
+      {discount > 0 && (
+        <div className="summary__row summary__discount">
+          <span>
+            Discount ({promo.code}, {promo.percent}%)
+          </span>
+          <span>−{formatNaira(discount)}</span>
+        </div>
+      )}
+      <div className="summary__row summary__total">
+        <span>{discount > 0 ? 'Estimated total' : 'Total'}</span>
+        <strong>{formatNaira(total)}</strong>
+      </div>
+      {step === 'details' && PROMO.enabled && (
+        <div className="promo-box">
+          {promo.valid ? (
+            <div className="promo-box__applied">
+              <span>
+                Code <strong>{promo.code}</strong> applied
+              </span>
+              <button type="button" className="link-btn" onClick={removePromo}>
+                Remove
+              </button>
+            </div>
+          ) : (
+            <form className="promo-box__form" onSubmit={applyPromo}>
+              <label htmlFor="promo" className="visually-hidden">
+                Promo code
+              </label>
+              <input
+                id="promo"
+                type="text"
+                placeholder="Promo code"
+                autoCapitalize="characters"
+                value={promoInput}
+                onChange={(e) => setPromoInput(e.target.value)}
+              />
+              <button type="submit" className="btn btn--ghost">
+                Apply
+              </button>
+            </form>
+          )}
+          {promoFeedback?.message && (
+            <p className={`promo-box__msg ${promoFeedback.valid ? 'is-ok' : 'is-error'}`} role="status">
+              {promoFeedback.message}
+            </p>
+          )}
+        </div>
+      )}
       <p className="summary__note">
         {d.fulfilment === 'delivery'
           ? 'Delivery fee depends on your area and is confirmed on WhatsApp.'
@@ -258,7 +351,9 @@ export default function Checkout() {
                         )}
                       </>
                     ) : (
-                      <>You’ll pick it up from us. We’ll send the address on WhatsApp.</>
+                      <>
+                        You’ll pick it up from us at {RESTAURANT.address || 'our kitchen'}.
+                      </>
                     )}
                   </dd>
                 </div>
@@ -339,7 +434,7 @@ export default function Checkout() {
               {d.orderType === 'once' && status.isOpen && (
                 <div className="seg seg--2" role="radiogroup" aria-label="When">
                   {[
-                    { id: 'asap', label: 'As soon as possible', hint: 'Today, while we’re open' },
+                    { id: 'asap', label: 'As soon as possible', hint: `Usually ready within ${etaText}` },
                     { id: 'later', label: 'Schedule for later', hint: 'Pick a date and time' },
                   ].map((o) => (
                     <label key={o.id} className={`seg__opt ${d.timing === o.id ? 'is-checked' : ''}`}>
@@ -350,6 +445,8 @@ export default function Checkout() {
                   ))}
                 </div>
               )}
+
+              {errors.timing && <p className="field__error field__error--block">{errors.timing}</p>}
 
               {d.orderType === 'once' && !status.isOpen && (
                 <p className="notice">We’re closed now, so pick when you’d like your pre-order.</p>
@@ -394,7 +491,7 @@ export default function Checkout() {
               <div className="seg seg--2" role="radiogroup" aria-label="Delivery or pickup">
                 {[
                   { id: 'delivery', label: 'Deliver to me', hint: 'Fee confirmed on WhatsApp' },
-                  { id: 'pickup', label: 'I’ll pick it up', hint: 'Collect from our kitchen' },
+                  { id: 'pickup', label: 'I’ll pick it up', hint: `From our kitchen in ${RESTAURANT.city}` },
                 ].map((o) => (
                   <label key={o.id} className={`seg__opt ${d.fulfilment === o.id ? 'is-checked' : ''}`}>
                     <input
@@ -423,10 +520,10 @@ export default function Checkout() {
                   </Field>
                   <div className="field-row">
                     <Field label="Area" optional>
-                      <input type="text" placeholder="e.g. Lekki Phase 1" value={d.area} onChange={set('area')} />
+                      <input type="text" placeholder="e.g. Ewet Housing" value={d.area} onChange={set('area')} />
                     </Field>
                     <Field label="Nearest landmark" optional>
-                      <input type="text" placeholder="e.g. opposite the filling station" value={d.landmark} onChange={set('landmark')} />
+                      <input type="text" placeholder="e.g. near Ibom Plaza" value={d.landmark} onChange={set('landmark')} />
                     </Field>
                   </div>
                 </>

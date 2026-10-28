@@ -1,0 +1,15 @@
+{
+  "name": "Chicken Pepper Soup",
+  "section": "plates",
+  "category": "Pepper soups",
+  "price": 8500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 501,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

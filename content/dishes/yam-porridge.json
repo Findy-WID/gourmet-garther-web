@@ -1,0 +1,15 @@
+{
+  "name": "Yam Porridge",
+  "section": "plates",
+  "category": "Porridge",
+  "price": 6000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 301,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

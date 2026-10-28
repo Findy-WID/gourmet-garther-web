@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { SECTIONS, getItem } from '../data/menu'
+import { SECTIONS, daysLabel, getItem } from '../data/menu'
 import { formatNaira } from '../config'
 import { useCart } from '../context/CartContext'
 import { useStatus } from '../lib/useStatus'
@@ -60,6 +60,7 @@ function ProductView({ item }) {
       unitPrice,
       qty,
       minQty,
+      days: item.days,
       choices: chosen,
       extras: ex,
     })
@@ -84,6 +85,15 @@ function ProductView({ item }) {
             <p className="product__unit">{item.unit}</p>
             <p className="product__desc">{item.description}</p>
             <p className="product__price">{formatNaira(item.price)}</p>
+            {item.days.length > 0 && (
+              <p className="notice">
+                <strong>{daysLabel(item.days)}.</strong> We only cook this on those days, so pick one of them as your
+                order date at checkout.
+              </p>
+            )}
+            {item.placeholder && (
+              <p className="notice notice--draft">Sample dish and price. The real one is coming soon.</p>
+            )}
             {!status.isOpen && (
               <p className="notice">
                 We’re closed now, so this will be a pre-order. We’ll confirm it on WhatsApp when we open{' '}

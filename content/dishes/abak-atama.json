@@ -1,0 +1,17 @@
+{
+  "name": "Abak Atama",
+  "section": "plates",
+  "category": "Soups",
+  "price": 9500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 407,
+  "choiceGroups": [
+    "swallow-basic"
+  ],
+  "extrasGroup": "soup-extras"
+}

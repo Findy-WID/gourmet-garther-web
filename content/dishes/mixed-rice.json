@@ -1,0 +1,15 @@
+{
+  "name": "Mixed Rice",
+  "section": "plates",
+  "category": "Sides & combos",
+  "price": 4500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 704,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

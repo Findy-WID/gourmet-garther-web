@@ -1,0 +1,15 @@
+{
+  "name": "Goatmeat Stew",
+  "section": "plates",
+  "category": "Sauces & stews",
+  "price": 12600,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 606,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

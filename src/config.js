@@ -1,24 +1,43 @@
 // ─────────────────────────────────────────────────────────────
 // Gourmet Gather — site settings
 //
-// WhatsApp number, opening hours, tagline and contact details are edited in
-// the admin panel (/admin → Restaurant settings), which saves them to
-// content/settings.json. Only the restaurant name lives here.
+// Address, WhatsApp, email, socials, promo code, opening hours and tagline
+// live in content/settings.json. Only the restaurant name lives here.
 // ─────────────────────────────────────────────────────────────
 import settings from '../content/settings.json'
 import { formatHour } from './lib/format'
 
 export const RESTAURANT = {
   name: 'Gourmet Gather',
-  tagline: settings.tagline,
-  city: settings.city || 'Lagos',
+  tagline: settings.tagline || 'Where Taste Meets Tradition',
+  intro: settings.intro || '',
+  city: settings.city || 'Uyo',
+  address: settings.address || '',
   whatsapp: String(settings.whatsapp).replace(/\D/g, ''),
   whatsappDisplay: settings.whatsappDisplay || settings.whatsapp,
   email: settings.email || '',
-  instagram: settings.instagram || '',
-  pickupAddress: settings.pickupAddress || '',
+  socials: [
+    { id: 'instagram', label: 'Instagram', handle: '@gourmetgather', url: settings.socials?.instagram },
+    { id: 'tiktok', label: 'TikTok', handle: '@gourmetgather', url: settings.socials?.tiktok },
+    { id: 'facebook', label: 'Facebook', handle: 'Gourmet Gather', url: settings.socials?.facebook },
+  ].filter((s) => s.url),
 }
 
+// Usual preparation + delivery time, in minutes (shown at checkout)
+export const ETA = {
+  plates: Number(settings.eta?.platesMinutes) || 60,
+  buckets: Number(settings.eta?.bucketsMinutes) || 90,
+}
+
+// First-order discount. The code is checked on the website and confirmed by the cashier on WhatsApp.
+export const PROMO = {
+  enabled: !!settings.promo?.enabled && !!settings.promo?.code,
+  code: String(settings.promo?.code || '').toUpperCase(),
+  percent: Number(settings.promo?.percent) || 0,
+  banner: settings.promo?.banner || 'First time here? Get a discount on your first order with code',
+}
+
+// Nigeria is one timezone (WAT). Its official name in software is "Africa/Lagos", but it covers Uyo too.
 export const TIMEZONE = 'Africa/Lagos'
 
 const DAY_KEYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']

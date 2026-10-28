@@ -1,0 +1,15 @@
+{
+  "name": "Ofada Rice & Sauce",
+  "section": "plates",
+  "category": "Rice",
+  "price": 6000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 120,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

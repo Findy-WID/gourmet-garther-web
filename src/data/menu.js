@@ -17,7 +17,7 @@ export const SECTIONS = [
     id: 'plates',
     name: 'Plates',
     short: 'Single meals, ready to eat',
-    long: 'One person, one plate. Pick your protein, add your sides, and it’s packed hot.',
+    long: 'Rice, pasta, soups and swallow, pepper soups and more. One person, one plate, packed hot.',
   },
   {
     id: 'buckets',
@@ -78,6 +78,8 @@ export const MENU = Object.entries(dishFiles)
       popular: !!d.popular,
       available: d.available !== false,
       minQty: Math.max(Number(d.minQty) || 1, 1),
+      placeholder: !!d.placeholder,
+      days: (d.days || []).map((x) => String(x).toLowerCase()),
       sort: Number(d.sort) || 999,
       choices: (d.choiceGroups || [])
         .map((id) => choiceById.get(id))
@@ -92,3 +94,10 @@ export const MENU = Object.entries(dishFiles)
 export const getItem = (id) => MENU.find((m) => m.id === id)
 export const itemsIn = (section) => MENU.filter((m) => m.section === section)
 export const groupsIn = (section) => [...new Set(itemsIn(section).map((m) => m.group))]
+
+// "Fridays only", "Saturdays only", "Fridays and Saturdays only"
+export function daysLabel(days) {
+  if (!days?.length) return ''
+  const names = days.map((d) => d.charAt(0).toUpperCase() + d.slice(1) + 's')
+  return `${names.length > 1 ? names.slice(0, -1).join(', ') + ' and ' + names.at(-1) : names[0]} only`
+}

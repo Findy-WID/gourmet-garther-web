@@ -6,12 +6,13 @@
   "unit": "About 2 litres",
   "description": "Thick egusi with ugu and stockfish, cooked in palm oil. Freezer-friendly.",
   "image": "",
-  "popular": true,
+  "popular": false,
   "available": true,
   "minQty": 1,
   "sort": 110,
   "choiceGroups": [
     "bucket-size"
   ],
-  "extrasGroup": "bucket-proteins"
+  "extrasGroup": "bucket-proteins",
+  "placeholder": true
 }

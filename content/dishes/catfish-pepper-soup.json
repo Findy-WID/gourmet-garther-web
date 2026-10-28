@@ -1,0 +1,15 @@
+{
+  "name": "Catfish Pepper Soup",
+  "section": "plates",
+  "category": "Pepper soups",
+  "price": 13500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 503,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

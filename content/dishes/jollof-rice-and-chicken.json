@@ -1,0 +1,15 @@
+{
+  "name": "Jollof Rice & Chicken",
+  "section": "plates",
+  "category": "Rice",
+  "price": 5700,
+  "unit": "1 plate",
+  "description": "",
+  "image": "/images/menu/jollof-rice-and-chicken.webp",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 111,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

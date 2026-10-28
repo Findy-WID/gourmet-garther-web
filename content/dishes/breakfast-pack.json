@@ -11,5 +11,6 @@
   "minQty": 10,
   "sort": 190,
   "choiceGroups": [],
-  "extrasGroup": "breakfast-extras"
+  "extrasGroup": "breakfast-extras",
+  "placeholder": true
 }

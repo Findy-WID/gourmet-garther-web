@@ -1,0 +1,15 @@
+{
+  "name": "Seafood Pasta",
+  "section": "plates",
+  "category": "Pasta",
+  "price": 8500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "/images/menu/seafood-pasta.webp",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 203,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

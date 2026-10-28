@@ -1,0 +1,15 @@
+{
+  "name": "Beef Curry Sauce",
+  "section": "plates",
+  "category": "Sides & combos",
+  "price": 10300,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 709,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

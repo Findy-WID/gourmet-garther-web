@@ -1,98 +1,105 @@
 {
   "choices": [
     {
-      "id": "plate-protein",
-      "name": "Plates: protein",
+      "id": "coconut-protein",
+      "name": "Coconut rice: protein",
       "label": "Choose your protein",
       "options": [
         {
-          "label": "Grilled chicken",
+          "label": "Chicken",
           "price": 0
         },
         {
-          "label": "Peppered turkey",
-          "price": 1500
-        },
-        {
-          "label": "Beef (2 pieces)",
-          "price": -500
-        },
-        {
-          "label": "Fried croaker fish",
-          "price": 1000
-        },
-        {
-          "label": "Goat meat (2 pieces)",
-          "price": 1000
+          "label": "Fish",
+          "price": 0
         }
       ]
     },
     {
-      "id": "ewa-protein",
-      "name": "Ewa agoyin: protein",
-      "label": "Add a protein",
-      "options": [
-        {
-          "label": "No protein",
-          "price": 0
-        },
-        {
-          "label": "Fried fish",
-          "price": 2500
-        },
-        {
-          "label": "Two boiled eggs",
-          "price": 800
-        }
-      ]
-    },
-    {
-      "id": "soup",
-      "name": "Soup choice",
-      "label": "Choose your soup",
-      "options": [
-        {
-          "label": "Egusi",
-          "price": 0
-        },
-        {
-          "label": "Efo riro",
-          "price": 500
-        },
-        {
-          "label": "Okra",
-          "price": 0
-        },
-        {
-          "label": "Ogbono",
-          "price": 0
-        },
-        {
-          "label": "Afang",
-          "price": 1000
-        }
-      ]
-    },
-    {
-      "id": "swallow",
-      "name": "Swallow choice",
+      "id": "swallow-basic",
+      "name": "Swallow: Garri or Fufu",
       "label": "Choose your swallow",
       "options": [
         {
-          "label": "Pounded yam",
+          "label": "Garri",
           "price": 0
         },
         {
-          "label": "Eba",
+          "label": "Fufu",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "id": "swallow-afang",
+      "name": "Swallow: Afang soup",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Garri",
           "price": 0
         },
         {
-          "label": "Amala",
+          "label": "Fufu",
           "price": 0
         },
         {
           "label": "Semo",
+          "price": 1500
+        },
+        {
+          "label": "Oat",
+          "price": 1500
+        }
+      ]
+    },
+    {
+      "id": "swallow-vegetable",
+      "name": "Swallow: Vegetable soup",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Garri",
           "price": 0
+        },
+        {
+          "label": "Fufu",
+          "price": 0
+        },
+        {
+          "label": "Semo",
+          "price": 1500
+        }
+      ]
+    },
+    {
+      "id": "swallow-white",
+      "name": "Swallow: White soup",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Garri",
+          "price": 0
+        },
+        {
+          "label": "Fufu",
+          "price": 0
+        },
+        {
+          "label": "Semo",
+          "price": 1500
+        },
+        {
+          "label": "Wheat",
+          "price": 1500
+        },
+        {
+          "label": "Oat",
+          "price": 1500
+        },
+        {
+          "label": "Pounded yam",
+          "price": 2800
         }
       ]
     },
@@ -224,65 +231,155 @@
   ],
   "extras": [
     {
-      "id": "plate-extras",
-      "name": "Plates: extras",
+      "id": "add-protein",
+      "name": "Add protein",
       "max": 0,
       "items": [
         {
-          "label": "Dodo (fried plantain)",
-          "price": 1000,
-          "note": ""
-        },
-        {
-          "label": "Moi moi",
-          "price": 1200,
-          "note": ""
-        },
-        {
-          "label": "Boiled egg",
-          "price": 400,
-          "note": ""
-        },
-        {
-          "label": "Coleslaw",
-          "price": 800,
-          "note": ""
-        },
-        {
-          "label": "Extra chicken",
+          "label": "Goatmeat",
           "price": 3000,
-          "note": ""
+          "note": "per portion"
         },
         {
-          "label": "Chilled soft drink",
-          "price": 700,
-          "note": ""
+          "label": "Beef",
+          "price": 3000,
+          "note": "per portion"
+        },
+        {
+          "label": "Chicken",
+          "price": 3000,
+          "note": "per portion"
+        },
+        {
+          "label": "Drumsticks",
+          "price": 4000,
+          "note": "per portion"
+        },
+        {
+          "label": "Turkey",
+          "price": 7000,
+          "note": "per portion"
+        },
+        {
+          "label": "Fish",
+          "price": 3500,
+          "note": "per portion"
+        },
+        {
+          "label": "Assorted",
+          "price": 3500,
+          "note": "per portion"
+        },
+        {
+          "label": "Intestines",
+          "price": 1500,
+          "note": "per portion"
+        },
+        {
+          "label": "Shaki",
+          "price": 1500,
+          "note": "per portion"
+        },
+        {
+          "label": "Ponmo",
+          "price": 1000,
+          "note": "per portion"
+        },
+        {
+          "label": "Panla",
+          "price": 1000,
+          "note": "per portion"
         }
       ]
     },
     {
       "id": "soup-extras",
-      "name": "Soup & swallow: extras",
+      "name": "Soups: extra protein & swallow",
       "max": 0,
       "items": [
         {
-          "label": "Extra wrap of swallow",
-          "price": 800,
-          "note": ""
+          "label": "Goatmeat",
+          "price": 3000,
+          "note": "per portion"
         },
         {
-          "label": "Extra beef",
+          "label": "Beef",
+          "price": 3000,
+          "note": "per portion"
+        },
+        {
+          "label": "Chicken",
+          "price": 3000,
+          "note": "per portion"
+        },
+        {
+          "label": "Drumsticks",
+          "price": 4000,
+          "note": "per portion"
+        },
+        {
+          "label": "Turkey",
+          "price": 7000,
+          "note": "per portion"
+        },
+        {
+          "label": "Fish",
+          "price": 3500,
+          "note": "per portion"
+        },
+        {
+          "label": "Assorted",
+          "price": 3500,
+          "note": "per portion"
+        },
+        {
+          "label": "Intestines",
+          "price": 1500,
+          "note": "per portion"
+        },
+        {
+          "label": "Shaki",
+          "price": 1500,
+          "note": "per portion"
+        },
+        {
+          "label": "Ponmo",
+          "price": 1000,
+          "note": "per portion"
+        },
+        {
+          "label": "Panla",
+          "price": 1000,
+          "note": "per portion"
+        },
+        {
+          "label": "Extra garri",
           "price": 1000,
           "note": ""
         },
         {
-          "label": "Extra fish",
-          "price": 3000,
+          "label": "Extra fufu",
+          "price": 1000,
           "note": ""
         },
         {
-          "label": "Chilled soft drink",
-          "price": 700,
+          "label": "Extra semo",
+          "price": 1500,
+          "note": ""
+        },
+        {
+          "label": "Extra poundo",
+          "price": 1500,
+          "note": ""
+        },
+        {
+          "label": "Extra wheatmeal / oat",
+          "price": 1500,
+          "note": ""
+        },
+        {
+          "label": "Extra pounded yam",
+          "price": 2500,
           "note": ""
         }
       ]

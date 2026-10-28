@@ -1,0 +1,15 @@
+{
+  "name": "Spaghetti Bolognese",
+  "section": "plates",
+  "category": "Pasta",
+  "price": 7900,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 204,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

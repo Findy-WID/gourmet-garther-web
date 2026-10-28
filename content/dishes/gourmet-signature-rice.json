@@ -1,0 +1,15 @@
+{
+  "name": "Gourmet Signature Rice",
+  "section": "plates",
+  "category": "Rice",
+  "price": 8000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 114,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

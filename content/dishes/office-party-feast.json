@@ -13,5 +13,6 @@
   "choiceGroups": [
     "feast-rice"
   ],
-  "extrasGroup": "feast-extras"
+  "extrasGroup": "feast-extras",
+  "placeholder": true
 }

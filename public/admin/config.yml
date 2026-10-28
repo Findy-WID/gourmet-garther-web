@@ -16,7 +16,7 @@ backend:
     deleteMedia: 'Admin: delete “{{path}}”'
 
 logo:
-  src: /favicon.svg
+  src: /brand/icon-512.png
 
 # Uploaded photos are saved to public/images and shown on the site as /images/…
 media_folder: public/images
@@ -77,7 +77,19 @@ collections:
         widget: boolean
         default: true
         hint: Switch off to show the dish as “Sold out” without deleting it.
-      - label: Show in “Most ordered” on the home page
+      - label: Only cooked on certain days
+        name: days
+        widget: select
+        multiple: true
+        required: false
+        options: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+        hint: Leave empty if it’s available every day. e.g. Mushroom Soup → friday
+      - label: Sample dish (not on the real menu yet)
+        name: placeholder
+        widget: boolean
+        default: false
+        required: false
+      - label: Show in “Start with these” on the home page
         name: popular
         widget: boolean
         default: false
@@ -192,10 +204,86 @@ collections:
                     required: false
                     hint: Optional, e.g. “per piece”
 
+  # ── Pages ─────────────────────────────────────────────────
+  - name: pages
+    label: Pages
+    description: About page and careers (job openings).
+    files:
+      - name: about
+        label: About page
+        file: content/about.json
+        format: json
+        fields:
+          - { label: Still draft text, name: placeholder, widget: boolean, default: false, required: false }
+          - { label: Title, name: title, widget: string }
+          - { label: Opening line, name: intro, widget: text }
+          - { label: Top photo, name: image, widget: image, required: false }
+          - label: How we started
+            name: story
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: text, widget: text } }
+              - label: Opening date
+                name: milestone
+                widget: object
+                fields:
+                  - { label: Date, name: date, widget: string }
+                  - { label: Text, name: text, widget: string }
+          - label: What we cook
+            name: cook
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - label: Highlights
+                name: highlights
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: body, widget: text }
+                  - { label: Link (e.g. /menu/abak-atama), name: link, widget: string, required: false }
+          - label: What makes us different
+            name: different
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: body, widget: text }
+          - label: Photo gallery
+            name: gallery
+            widget: list
+            fields:
+              - { label: Photo, name: src, widget: image }
+              - { label: Description, name: alt, widget: string }
+      - name: careers
+        label: Careers
+        file: content/careers.json
+        format: json
+        fields:
+          - { label: Intro, name: intro, widget: text }
+          - { label: How to apply, name: howToApply, widget: text }
+          - { label: Note for general applications, name: openToAll, widget: text }
+          - label: Open positions
+            name: positions
+            widget: list
+            summary: '{{fields.title}} ({{fields.type}})'
+            fields:
+              - { label: Job title, name: title, widget: string }
+              - label: Type
+                name: type
+                widget: select
+                options: [Full-time, Part-time, Contract, Internship]
+              - { label: Location, name: location, widget: string, default: Uyo }
+              - { label: Accepting applications, name: open, widget: boolean, default: true, hint: Switch off to hide the role without deleting it. }
+              - { label: Sample role, name: placeholder, widget: boolean, default: false, required: false }
+              - { label: Summary, name: summary, widget: text }
+              - { label: Requirements, name: requirements, widget: list, field: { label: Requirement, name: item, widget: string } }
+
   # ── Restaurant settings ───────────────────────────────────
   - name: settings
     label: Restaurant settings
-    description: Opening hours, WhatsApp number and contact details.
+    description: Opening hours, WhatsApp, email, address, social links and the first-order discount.
     files:
       - name: settings
         label: Restaurant settings
@@ -211,12 +299,27 @@ collections:
             name: whatsappDisplay
             widget: string
             hint: e.g. +234 903 401 3321
-          - { label: Tagline, name: tagline, widget: text }
-          - { label: City, name: city, widget: string, default: Lagos }
-          - { label: Pickup address, name: pickupAddress, widget: string, required: false }
+          - { label: Tagline, name: tagline, widget: string, default: Where Taste Meets Tradition }
+          - { label: Short intro (home page), name: intro, widget: text }
+          - { label: City, name: city, widget: string, default: Uyo }
+          - { label: Address, name: address, widget: text, hint: Shown in the footer, on the About page and for pickup orders. }
           - { label: Email, name: email, widget: string, required: false }
-          - { label: Instagram link, name: instagram, widget: string, required: false }
-          - label: Opening hours (Lagos time)
+          - label: Social media links
+            name: socials
+            widget: object
+            fields:
+              - { label: Instagram link, name: instagram, widget: string, required: false }
+              - { label: TikTok link, name: tiktok, widget: string, required: false }
+              - { label: Facebook link, name: facebook, widget: string, required: false }
+          - label: First-order discount
+            name: promo
+            widget: object
+            fields:
+              - { label: Show the offer, name: enabled, widget: boolean, default: true }
+              - { label: Code, name: code, widget: string, hint: 'Customers type this at checkout, e.g. GOURMET' }
+              - { label: Discount (%), name: percent, widget: number, value_type: int, min: 1, max: 100 }
+              - { label: Banner text, name: banner, widget: string, hint: The code is added after this text automatically. }
+          - label: Opening hours (Nigeria time)
             name: hours
             widget: object
             hint: 24-hour clock. 9 = 9am, 13 = 1pm, 21 = 9pm. Visitors see “We’re closed” outside these hours and can still pre-order.

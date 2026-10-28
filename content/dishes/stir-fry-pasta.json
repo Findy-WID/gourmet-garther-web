@@ -1,0 +1,15 @@
+{
+  "name": "Stir-fry Pasta",
+  "section": "plates",
+  "category": "Pasta",
+  "price": 8500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "/images/menu/stir-fry-pasta.webp",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 202,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

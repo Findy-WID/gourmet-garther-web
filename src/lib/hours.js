@@ -5,8 +5,8 @@ export { formatHour }
 
 const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-// Current day/hour/minute in Lagos, whatever the visitor's own timezone is.
-export function lagosNow(date = new Date()) {
+// Current day/hour/minute in Nigeria (WAT), whatever the visitor's own timezone is.
+export function nigeriaNow(date = new Date()) {
   const parts = new Intl.DateTimeFormat('en-GB', {
     timeZone: TIMEZONE,
     weekday: 'short',
@@ -25,7 +25,7 @@ export function lagosNow(date = new Date()) {
 
 // Returns { isOpen, closesAt, nextOpenLabel }
 export function getStatus(date = new Date()) {
-  const { day, hour, minute } = lagosNow(date)
+  const { day, hour, minute } = nigeriaNow(date)
   const mins = hour * 60 + minute
   const today = OPENING_HOURS[day]
 

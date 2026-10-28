@@ -11,6 +11,9 @@ import Product from './pages/Product'
 import Workplace from './pages/Workplace'
 import Checkout from './pages/Checkout'
 import NotFound from './pages/NotFound'
+import About from './pages/About'
+import Careers from './pages/Careers'
+import PromoBar from './components/PromoBar'
 
 // /admin is a separate app in public/admin — leave the React site to load it
 function AdminRedirect() {
@@ -43,6 +46,7 @@ export default function App() {
         Skip to content
       </a>
       <Header />
+      <PromoBar />
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -50,6 +54,8 @@ export default function App() {
           <Route path="/menu/:id" element={<Product />} />
           <Route path="/workplace" element={<Workplace />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/admin" element={<AdminRedirect />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

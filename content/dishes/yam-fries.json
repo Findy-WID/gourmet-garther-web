@@ -1,0 +1,15 @@
+{
+  "name": "Yam Fries",
+  "section": "plates",
+  "category": "Sides & combos",
+  "price": 2500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 706,
+  "choiceGroups": [],
+  "extrasGroup": ""
+}

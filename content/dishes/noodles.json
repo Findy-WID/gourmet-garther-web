@@ -1,0 +1,15 @@
+{
+  "name": "Noodles",
+  "section": "plates",
+  "category": "Sides & combos",
+  "price": 3000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 703,
+  "choiceGroups": [],
+  "extrasGroup": ""
+}

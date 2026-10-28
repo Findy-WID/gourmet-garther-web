@@ -1,0 +1,15 @@
+{
+  "name": "Jambalaya Rice",
+  "section": "plates",
+  "category": "Rice",
+  "price": 7000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 115,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

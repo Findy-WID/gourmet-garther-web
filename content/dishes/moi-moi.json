@@ -1,0 +1,15 @@
+{
+  "name": "Moi Moi",
+  "section": "plates",
+  "category": "Sides & combos",
+  "price": 1200,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 705,
+  "choiceGroups": [],
+  "extrasGroup": ""
+}

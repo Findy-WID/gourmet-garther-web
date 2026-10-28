@@ -1,0 +1,17 @@
+{
+  "name": "Afang Soup",
+  "section": "plates",
+  "category": "Soups",
+  "price": 5500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 401,
+  "choiceGroups": [
+    "swallow-afang"
+  ],
+  "extrasGroup": "soup-extras"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Fried Rice & Chicken",
+  "section": "plates",
+  "category": "Rice",
+  "price": 6500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "/images/menu/fried-rice-and-chicken.webp",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 112,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

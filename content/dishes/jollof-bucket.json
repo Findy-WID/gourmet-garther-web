@@ -6,12 +6,13 @@
   "unit": "Serves 4 to 6",
   "description": "A full bucket of our smoky party jollof. Add proteins by the piece.",
   "image": "",
-  "popular": true,
+  "popular": false,
   "available": true,
   "minQty": 1,
   "sort": 90,
   "choiceGroups": [
     "bucket-size"
   ],
-  "extrasGroup": "bucket-proteins"
+  "extrasGroup": "bucket-proteins",
+  "placeholder": true
 }

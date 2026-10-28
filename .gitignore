@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw photos from the client (originals). Only the chosen, resized copies in public/images are deployed.
+client-photos/

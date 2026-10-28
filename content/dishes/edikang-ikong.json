@@ -1,0 +1,15 @@
+{
+  "name": "Edikang Ikong",
+  "section": "plates",
+  "category": "Soups",
+  "price": 12500,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 412,
+  "choiceGroups": [],
+  "extrasGroup": "soup-extras"
+}

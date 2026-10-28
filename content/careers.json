@@ -1,0 +1,25 @@
+{
+  "intro": "We’re a growing kitchen in Uyo and we’re always glad to hear from people who love food and good service.",
+  "howToApply": "Send your CV and a short note about yourself to our email, with the role in the subject line.",
+  "openToAll": "Don’t see a role that fits? Send your CV anyway and we’ll keep it on file.",
+  "positions": [
+    {
+      "title": "Line cook",
+      "type": "Full-time",
+      "location": "Uyo",
+      "open": true,
+      "placeholder": true,
+      "summary": "Sample role. Prepare and cook menu items to recipe, keep your station clean and help the team hit order times.",
+      "requirements": ["At least 1 year in a busy kitchen", "Knows Nigerian soups and stews", "Available weekends"]
+    },
+    {
+      "title": "Delivery rider",
+      "type": "Full-time",
+      "location": "Uyo",
+      "open": true,
+      "placeholder": true,
+      "summary": "Sample role. Deliver orders around Uyo on time and keep customers updated.",
+      "requirements": ["Valid rider’s permit", "Knows Uyo well", "Owns a smartphone with WhatsApp"]
+    }
+  ]
+}

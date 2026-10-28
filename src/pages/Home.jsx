@@ -5,6 +5,13 @@ import FoodImage from '../components/FoodImage'
 import { useStatus } from '../lib/useStatus'
 import { HOURS_SUMMARY, RESTAURANT } from '../config'
 
+// Photos for the "What are you ordering for?" cards. Leave empty to show the drawn placeholder.
+const SECTION_PHOTOS = {
+  plates: '/images/site/rice-and-pasta-spread.webp',
+  buckets: '',
+  corporate: '/images/site/catering.webp',
+}
+
 const STEPS = [
   { title: 'Pick your food', body: 'Choose plates, buckets or a workplace pack, with your protein and extras.' },
   { title: 'Tell us how and when', body: 'One-time, weekly or monthly. Delivery to your address, or pick it up yourself.' },
@@ -21,11 +28,10 @@ export default function Home() {
         <div className="container hero__grid">
           <div className="hero__copy">
             <h1 className="hero__title">
-              Big Lagos flavour, by the plate or by the bucket.
+              {RESTAURANT.tagline}
             </h1>
             <p className="hero__lede">
-              Jollof, soups, stews and office lunches from the {RESTAURANT.name} kitchen. Order here, then confirm
-              and pay on WhatsApp.
+              {RESTAURANT.intro} Order here, then confirm and pay on WhatsApp.
             </p>
             <div className="hero__actions">
               <Link to="/menu" className="btn btn--light btn--lg">
@@ -60,8 +66,8 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div>
-              <h2>Most ordered</h2>
-              <p>What Lagos keeps coming back for.</p>
+              <h2>Start with these</h2>
+              <p>A few favourites from the {RESTAURANT.city} kitchen.</p>
             </div>
             <Link to="/menu" className="text-link">
               See the full menu
@@ -89,7 +95,11 @@ export default function Home() {
               const to = s.id === 'corporate' ? '/workplace' : `/menu?tab=${s.id}`
               return (
                 <Link key={s.id} to={to} className={`way way--${s.id}`}>
-                  <FoodImage item={sample} className="way__img" />
+                  {SECTION_PHOTOS[s.id] ? (
+                    <img className="food-img way__img" src={SECTION_PHOTOS[s.id]} alt="" loading="lazy" />
+                  ) : (
+                    <FoodImage item={sample} className="way__img" />
+                  )}
                   <div className="way__body">
                     <h3>{s.name}</h3>
                     <p>{s.long}</p>
@@ -98,6 +108,36 @@ export default function Home() {
                 </Link>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tint visit">
+        <div className="container visit__grid">
+          <div className="visit__photos">
+            <img src="/images/site/diners-mural.webp" alt="Guests eating together in the Gourmet Gather dining room" loading="lazy" />
+            <img src="/images/site/storefront.webp" alt="The Gourmet Gather storefront" loading="lazy" />
+          </div>
+          <div className="visit__copy">
+            <h2>Eat in with us</h2>
+            <p>
+              Our dining room is open every day for lunch, dinner and get-togethers. Come in, or order ahead and pick
+              up on your way.
+            </p>
+            <p className="visit__address">{RESTAURANT.address}</p>
+            <div className="hero__actions">
+              <a
+                className="btn btn--primary"
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(RESTAURANT.address)}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Get directions
+              </a>
+              <Link to="/about" className="btn btn--ghost">
+                About us
+              </Link>
+            </div>
           </div>
         </div>
       </section>

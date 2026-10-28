@@ -1,0 +1,15 @@
+{
+  "name": "Porridge Beans",
+  "section": "plates",
+  "category": "Porridge",
+  "price": 4000,
+  "unit": "1 plate",
+  "description": "",
+  "image": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 302,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

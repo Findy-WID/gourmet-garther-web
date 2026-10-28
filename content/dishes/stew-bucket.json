@@ -13,5 +13,6 @@
   "choiceGroups": [
     "bucket-size"
   ],
-  "extrasGroup": "bucket-proteins"
+  "extrasGroup": "bucket-proteins",
+  "placeholder": true
 }

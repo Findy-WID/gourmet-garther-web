@@ -13,5 +13,6 @@
   "choiceGroups": [
     "exec-main"
   ],
-  "extrasGroup": ""
+  "extrasGroup": "",
+  "placeholder": true
 }
