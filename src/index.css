@@ -2376,3 +2376,75 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Careers extras ──────────────────────────────────────── */
+
+.role p {
+  margin-bottom: 0.8em;
+}
+.role__schedule {
+  background: var(--orange-soft);
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  font-size: 0.95rem;
+}
+.role__actions {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+.role .role__actions .btn {
+  margin-top: 0;
+}
+.role__wa {
+  font-size: 0.92rem;
+}
+.apply-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: none;
+}
+.visit-card--apply .role__reqs {
+  margin: 4px 0 12px;
+}
+
+.status-pill {
+  flex: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.status-pill.is-open {
+  background: var(--green-soft);
+  color: var(--green-dark);
+}
+.status-pill.is-closed {
+  background: #f1ebe8;
+  color: var(--muted);
+}
+.role.is-closed {
+  background: #fbf9f8;
+}
+.role.is-closed h3,
+.role.is-closed p {
+  color: var(--muted);
+}
+
+.no-roles {
+  background: var(--orange-soft);
+  border-radius: var(--r-lg);
+  padding: 28px 30px;
+  margin-bottom: 28px;
+}
+.no-roles h2 {
+  font-size: 1.5rem;
+}
+.no-roles p {
+  margin: 0;
+  max-width: 60ch;
+}

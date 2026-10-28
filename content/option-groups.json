@@ -31,6 +31,25 @@
       ]
     },
     {
+      "id": "swallow-gfs",
+      "name": "Swallow: Garri, Fufu or Semo (included)",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Garri",
+          "price": 0
+        },
+        {
+          "label": "Fufu",
+          "price": 0
+        },
+        {
+          "label": "Semo",
+          "price": 0
+        }
+      ]
+    },
+    {
       "id": "swallow-afang",
       "name": "Swallow: Afang soup",
       "label": "Choose your swallow",

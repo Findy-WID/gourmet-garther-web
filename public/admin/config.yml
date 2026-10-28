@@ -262,23 +262,26 @@ collections:
         format: json
         fields:
           - { label: Intro, name: intro, widget: text }
+          - { label: Application email, name: applyEmail, widget: string }
+          - { label: Application WhatsApp (digits, with 234), name: applyWhatsapp, widget: string }
+          - { label: WhatsApp number as shown, name: applyWhatsappDisplay, widget: string }
           - { label: How to apply, name: howToApply, widget: text }
-          - { label: Note for general applications, name: openToAll, widget: text }
+          - { label: General requirements, name: generalRequirements, widget: list, required: false, field: { label: Requirement, name: item, widget: string } }
+          - { label: Closing note, name: openToAll, widget: text }
           - label: Open positions
             name: positions
             widget: list
-            summary: '{{fields.title}} ({{fields.type}})'
+            summary: '{{fields.title}}'
             fields:
               - { label: Job title, name: title, widget: string }
-              - label: Type
-                name: type
-                widget: select
-                options: [Full-time, Part-time, Contract, Internship]
               - { label: Location, name: location, widget: string, default: Uyo }
-              - { label: Accepting applications, name: open, widget: boolean, default: true, hint: Switch off to hide the role without deleting it. }
-              - { label: Sample role, name: placeholder, widget: boolean, default: false, required: false }
-              - { label: Summary, name: summary, widget: text }
-              - { label: Requirements, name: requirements, widget: list, field: { label: Requirement, name: item, widget: string } }
+              - { label: Type (e.g. Full-time), name: type, widget: string, required: false }
+              - { label: Note (e.g. Female applicants), name: note, widget: string, required: false }
+              - { label: Open, name: open, widget: boolean, default: true, hint: 'On = shows as Open with apply buttons. Off = shows as Closed. Delete the role to remove it completely.' }
+              - { label: Description paragraphs, name: summary, widget: list, required: false, field: { label: Paragraph, name: text, widget: text } }
+              - { label: Requirements, name: requirements, widget: list, required: false, field: { label: Requirement, name: item, widget: string } }
+              - { label: Work schedule, name: schedule, widget: string, required: false }
+              - { label: Job description link (Google Doc), name: jdLink, widget: string, required: false }
 
   # ── Restaurant settings ───────────────────────────────────
   - name: settings

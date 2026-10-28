@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useStatus } from '../lib/useStatus'
-import { ETA, OPENING_HOURS, PROMO, RESTAURANT, TIMEZONE, formatNaira } from '../config'
+import { DELIVERY, ETA, OPENING_HOURS, PROMO, RESTAURANT, TIMEZONE, formatNaira } from '../config'
 import { formatHour, nigeriaNow } from '../lib/hours'
 import {
   ORDER_TYPES,
@@ -13,7 +13,7 @@ import {
   scheduleText,
   whatsappLink,
 } from '../lib/order'
-import { checkPromo, discountFor, hasOrderedBefore, markOrdered } from '../lib/promo'
+import { checkPromo, discountFor, hasOrderedBefore, markOrdered, promoScope } from '../lib/promo'
 import { daysLabel } from '../data/menu'
 
 const DETAILS_KEY = 'gg-checkout-details'
@@ -76,7 +76,8 @@ export default function Checkout() {
   const [promoInput, setPromoInput] = useState(d.promoCode || '')
   const [promoFeedback, setPromoFeedback] = useState(null)
   const promo = useMemo(() => checkPromo(d.promoCode), [d.promoCode])
-  const discount = discountFor(subtotal, promo)
+  const discount = discountFor(lines, promo)
+  const promoNoEffect = promo.valid && discount === 0
   const total = subtotal - discount
 
   function applyPromo(e) {
@@ -257,7 +258,7 @@ export default function Checkout() {
       {discount > 0 && (
         <div className="summary__row summary__discount">
           <span>
-            Discount ({promo.code}, {promo.percent}%)
+            Discount ({promo.code}, {promo.percent}%{promoScope() ? `, ${promoScope()}` : ''})
           </span>
           <span>−{formatNaira(discount)}</span>
         </div>
@@ -295,7 +296,12 @@ export default function Checkout() {
               </button>
             </form>
           )}
-          {promoFeedback?.message && (
+          {promoNoEffect && (
+            <p className="promo-box__msg is-error" role="status">
+              {promo.code} works on {PROMO.appliesTo.join(' and ')} only. Add a plate to use it.
+            </p>
+          )}
+          {promoFeedback?.message && !promoNoEffect && (
             <p className={`promo-box__msg ${promoFeedback.valid ? 'is-ok' : 'is-error'}`} role="status">
               {promoFeedback.message}
             </p>
@@ -304,7 +310,7 @@ export default function Checkout() {
       )}
       <p className="summary__note">
         {d.fulfilment === 'delivery'
-          ? 'Delivery fee depends on your area and is confirmed on WhatsApp.'
+          ? DELIVERY.feeNote
           : 'No delivery fee for pickup.'}
       </p>
     </aside>
@@ -480,7 +486,7 @@ export default function Checkout() {
               )}
               {d.orderType !== 'once' && (
                 <p className="hint">
-                  We’ll confirm the repeat schedule and how payment works for it on WhatsApp. You can pause or cancel
+                  You’ll pay for each delivery as it comes. We’ll confirm the schedule on WhatsApp, and you can pause or cancel
                   any time by messaging us.
                 </p>
               )}
@@ -490,7 +496,7 @@ export default function Checkout() {
               <h2>Delivery or pickup?</h2>
               <div className="seg seg--2" role="radiogroup" aria-label="Delivery or pickup">
                 {[
-                  { id: 'delivery', label: 'Deliver to me', hint: 'Fee confirmed on WhatsApp' },
+                  { id: 'delivery', label: 'Deliver to me', hint: 'Fee depends on distance' },
                   { id: 'pickup', label: 'I’ll pick it up', hint: `From our kitchen in ${RESTAURANT.city}` },
                 ].map((o) => (
                   <label key={o.id} className={`seg__opt ${d.fulfilment === o.id ? 'is-checked' : ''}`}>

@@ -10,7 +10,9 @@
   "available": true,
   "minQty": 1,
   "sort": 11,
-  "choiceGroups": [],
+  "choiceGroups": [
+    "swallow-basic"
+  ],
   "extrasGroup": "soup-extras",
   "days": [
     "friday"

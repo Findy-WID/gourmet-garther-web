@@ -34,8 +34,18 @@ export function checkPromo(input) {
     percent: PROMO.percent,
     message: hasOrderedBefore()
       ? `Applied. This code is for first orders only, so we’ll confirm it on WhatsApp.`
-      : `${PROMO.percent}% off applied. It’s for first orders and we’ll confirm it on WhatsApp.`,
+      : `${PROMO.percent}% off applied${PROMO.appliesTo.length ? ` to ${PROMO.appliesTo.join(' and ')}` : ''}. It’s for first orders and we’ll confirm it on WhatsApp.`,
   }
 }
 
-export const discountFor = (subtotal, promo) => (promo?.valid ? Math.round((subtotal * promo.percent) / 100) : 0)
+// Only lines from eligible menu sections count towards the discount.
+export const eligibleSubtotal = (lines) =>
+  lines
+    .filter((l) => !PROMO.appliesTo.length || PROMO.appliesTo.includes(l.section))
+    .reduce((s, l) => s + l.unitPrice * l.qty, 0)
+
+export const discountFor = (lines, promo) =>
+  promo?.valid ? Math.round((eligibleSubtotal(lines) * promo.percent) / 100) : 0
+
+// e.g. "plates only" — empty when it applies to everything
+export const promoScope = () => (PROMO.appliesTo.length ? `${PROMO.appliesTo.join(' and ')} only` : '')

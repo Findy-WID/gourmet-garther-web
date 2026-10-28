@@ -35,6 +35,13 @@ export const PROMO = {
   code: String(settings.promo?.code || '').toUpperCase(),
   percent: Number(settings.promo?.percent) || 0,
   banner: settings.promo?.banner || 'First time here? Get a discount on your first order with code',
+  // Menu sections the discount applies to (e.g. ['plates']). Empty = everything.
+  appliesTo: settings.promo?.appliesTo || [],
+}
+
+export const DELIVERY = {
+  areas: settings.delivery?.areas || '',
+  feeNote: settings.delivery?.feeNote || 'Delivery fee is confirmed on WhatsApp.',
 }
 
 // Nigeria is one timezone (WAT). Its official name in software is "Africa/Lagos", but it covers Uyo too.

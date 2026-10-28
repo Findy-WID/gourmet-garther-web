@@ -1,4 +1,4 @@
-import { RESTAURANT, formatNaira } from '../config'
+import { PROMO, RESTAURANT, formatNaira } from '../config'
 
 export const ORDER_TYPES = [
   { id: 'once', label: 'One-time order', hint: 'A single order for one day.' },
@@ -62,7 +62,7 @@ export function buildWhatsAppMessage({ details, lines, subtotal, reference, isPr
   out.push('')
   if (discount > 0) {
     out.push(`Subtotal: ${formatNaira(subtotal)}`)
-    out.push(`First-order code ${promo.code}: −${formatNaira(discount)} (${promo.percent}%)`)
+    out.push(`First-order code ${promo.code}: −${formatNaira(discount)} (${promo.percent}%${PROMO.appliesTo.length ? ` on ${PROMO.appliesTo.join(' and ')}` : ''})`)
     out.push(`*Total: ${formatNaira(subtotal - discount)}*`)
     out.push(
       repeatDevice
@@ -77,6 +77,7 @@ export function buildWhatsAppMessage({ details, lines, subtotal, reference, isPr
   out.push('*Order type*')
   out.push(type)
   out.push(scheduleText(details))
+  if (details.orderType !== 'once') out.push('Payment: per delivery')
   out.push('')
   if (details.fulfilment === 'delivery') {
     out.push('*Delivery*')

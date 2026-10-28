@@ -4,10 +4,18 @@ import { RESTAURANT } from '../config'
 // Content comes from content/careers.json (editable later in the admin panel).
 // Set "open": false on a position to hide it without deleting it.
 export default function Careers() {
-  const roles = (careers.positions || []).filter((p) => p.open !== false)
+  // Open roles first, closed ones after. A role is shown as Closed when "open" is false.
+  const roles = [...(careers.positions || [])].sort((a, b) => (b.open !== false) - (a.open !== false))
+  const email = careers.applyEmail || RESTAURANT.email
+  const whatsapp = careers.applyWhatsapp || RESTAURANT.whatsapp
 
-  const applyLink = (title) =>
-    `mailto:${RESTAURANT.email}?subject=${encodeURIComponent(`Application: ${title}`)}`
+  const emailLink = (title) => `mailto:${email}?subject=${encodeURIComponent(`Application: ${title}`)}`
+  const whatsappLink = (title) =>
+    `https://wa.me/${whatsapp}?text=${encodeURIComponent(
+      title
+        ? `Hello ${RESTAURANT.name}, I'd like to apply for the ${title} position. My CV is attached.`
+        : `Hello ${RESTAURANT.name}, I'd like to apply for a role. My CV is attached.`,
+    )}`
 
   return (
     <div className="page">
@@ -17,25 +25,33 @@ export default function Careers() {
           <p>{careers.intro}</p>
         </header>
 
-        <h2 className="careers-count">
-          {roles.length ? `${roles.length} open ${roles.length === 1 ? 'role' : 'roles'}` : 'No open roles right now'}
-        </h2>
+        {roles.length > 0 && !roles.some((r) => r.open !== false) && (
+          <div className="no-roles">
+            <h2>We’re not hiring right now</h2>
+            <p>All our roles below have been filled. Check back soon, or send us your CV and we’ll keep it on file.</p>
+          </div>
+        )}
 
         {roles.length > 0 ? (
           <ul className="roles">
             {roles.map((r) => (
-              <li key={r.title} className="role">
+              <li key={r.title} className={`role ${r.open === false ? 'is-closed' : ''}`}>
                 <div className="role__head">
                   <div>
                     <h3>{r.title}</h3>
                     <p className="role__meta">
-                      {r.type}
-                      {r.location ? `, ${r.location}` : ''}
+                      {[r.location, r.type, r.note].filter(Boolean).join(', ')}
                     </p>
                   </div>
-                  {r.placeholder && <span className="tag">Sample</span>}
+                  <span className={`status-pill ${r.open === false ? 'is-closed' : 'is-open'}`}>
+                    {r.open === false ? 'Closed' : 'Open'}
+                  </span>
                 </div>
-                <p>{r.summary}</p>
+
+                {r.summary?.map((p) => (
+                  <p key={p.slice(0, 20)}>{p}</p>
+                ))}
+
                 {r.requirements?.length > 0 && (
                   <>
                     <h4>What you’ll need</h4>
@@ -46,31 +62,65 @@ export default function Careers() {
                     </ul>
                   </>
                 )}
-                {RESTAURANT.email && (
-                  <a className="btn btn--primary" href={applyLink(r.title)}>
-                    Apply by email
-                  </a>
+
+                {r.schedule && (
+                  <p className="role__schedule">
+                    <strong>Work schedule:</strong> {r.schedule}
+                  </p>
                 )}
+
+                <div className="role__actions">
+                  {r.jdLink && (
+                    <a className="btn btn--ghost" href={r.jdLink} target="_blank" rel="noreferrer">
+                      Read the job description
+                    </a>
+                  )}
+                  {r.open !== false && email && (
+                    <a className="btn btn--primary" href={emailLink(r.title)}>
+                      Apply by email
+                    </a>
+                  )}
+                  {r.open !== false && whatsapp && (
+                    <a className="link-btn role__wa" href={whatsappLink(r.title)} target="_blank" rel="noreferrer">
+                      or send your CV on WhatsApp
+                    </a>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="muted">Check back soon, or send us your CV below.</p>
+          <div className="no-roles">
+            <h2>No open roles at the moment</h2>
+            <p>We’re not hiring right now, but we’re always glad to meet people who love food and good service. Check back soon, or send us your CV and we’ll keep it on file.</p>
+          </div>
         )}
 
-        <div className="visit-card">
+        <div className="visit-card visit-card--apply">
           <div>
             <h2>How to apply</h2>
             <p>{careers.howToApply}</p>
-            <p className="muted">{careers.openToAll}</p>
+            {careers.generalRequirements?.length > 0 && (
+              <ul className="role__reqs">
+                {careers.generalRequirements.map((g) => (
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
+            )}
+            {careers.openToAll && <p className="muted">{careers.openToAll}</p>}
           </div>
-          {RESTAURANT.email && (
-            <div className="visit-card__actions">
-              <a className="btn btn--ghost" href={applyLink('General application')}>
-                {RESTAURANT.email}
+          <div className="apply-contacts">
+            {email && (
+              <a className="btn btn--ghost" href={emailLink('General application')}>
+                {email}
               </a>
-            </div>
-          )}
+            )}
+            {whatsapp && (
+              <a className="btn btn--whatsapp" href={whatsappLink()} target="_blank" rel="noreferrer">
+                WhatsApp {careers.applyWhatsappDisplay || RESTAURANT.whatsappDisplay}
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

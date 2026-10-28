@@ -15,11 +15,18 @@
     "enabled": true,
     "code": "GOURMET",
     "percent": 10,
-    "banner": "First time here? Get 10% off your first order with code"
+    "banner": "First time here? Get 10% off your first order with code",
+    "appliesTo": [
+      "plates"
+    ]
   },
   "eta": {
     "platesMinutes": 60,
     "bucketsMinutes": 90
+  },
+  "delivery": {
+    "areas": "Within Uyo, across Akwa Ibom State and beyond",
+    "feeNote": "Delivery fee depends on distance and is confirmed on WhatsApp."
   },
   "hours": {
     "monday": {

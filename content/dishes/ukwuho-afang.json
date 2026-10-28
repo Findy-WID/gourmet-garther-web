@@ -10,6 +10,8 @@
   "available": true,
   "minQty": 1,
   "sort": 402,
-  "choiceGroups": [],
+  "choiceGroups": [
+    "swallow-gfs"
+  ],
   "extrasGroup": "soup-extras"
 }

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
-import { formatNaira } from '../config'
+import { DELIVERY, formatNaira } from '../config'
 import { lineDetail } from '../lib/order'
 import QtyStepper from './QtyStepper'
 
@@ -73,7 +73,7 @@ export default function CartDrawer() {
                 <span>Subtotal</span>
                 <strong>{formatNaira(subtotal)}</strong>
               </div>
-              <p className="drawer__note">Delivery fee is confirmed on WhatsApp.</p>
+              <p className="drawer__note">{DELIVERY.feeNote}</p>
               <button
                 className="btn btn--primary btn--block"
                 onClick={() => {
