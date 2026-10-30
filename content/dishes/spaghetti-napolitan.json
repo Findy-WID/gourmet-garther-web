@@ -1,0 +1,15 @@
+{
+  "name": "Spaghetti Napolitan",
+  "section": "plates",
+  "category": "Pasta",
+  "price": null,
+  "unit": "1 plate",
+  "description": "",
+  "image": "/images/menu/spaghetti-napolitan.webp",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 205,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

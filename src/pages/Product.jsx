@@ -56,6 +56,7 @@ function ProductView({ item }) {
       key,
       itemId: item.id,
       name: item.name,
+      unit: item.unit,
       section: item.section,
       unitPrice,
       qty,
@@ -83,8 +84,26 @@ function ProductView({ item }) {
             <p className="product__section">{section.name}</p>
             <h1 className="product__name">{item.name}</h1>
             <p className="product__unit">{item.unit}</p>
-            <p className="product__desc">{item.description}</p>
-            <p className="product__price">{formatNaira(item.price)}</p>
+            {item.description && <p className="product__desc">{item.description}</p>}
+            <p className="product__price">
+              {item.pricePending ? 'Price coming soon' : formatNaira(item.price)}
+              {!item.pricePending && (item.extras?.length > 0 || item.choices?.some((c) => c.options.some((o) => o.price))) && (
+                <span className="product__price-note"> base price</span>
+              )}
+            </p>
+            {(item.includes.length > 0 || item.proteinNote) && (
+              <details className="includes" open>
+                <summary>What’s included</summary>
+                {item.includes.length > 0 && (
+                  <ul>
+                    {item.includes.map((x) => (
+                      <li key={x}>{x}</li>
+                    ))}
+                  </ul>
+                )}
+                {item.proteinNote && <p className="includes__note">{item.proteinNote}</p>}
+              </details>
+            )}
             {item.days.length > 0 && (
               <p className="notice">
                 <strong>{daysLabel(item.days)}.</strong> We only cook this on those days, so pick one of them as your
@@ -130,7 +149,7 @@ function ProductView({ item }) {
             {item.extras?.length > 0 && (
               <fieldset className="option-group">
                 <legend>
-                  Add extras <span className="optional">optional</span>
+                  {item.proteinNote ? 'Add proteins & extras' : 'Add extras'} <span className="optional">optional</span>
                 </legend>
                 {item.extrasMax && (
                   <p className="option-hint">
@@ -173,7 +192,11 @@ function ProductView({ item }) {
                 <span>Total</span>
                 <strong>{formatNaira(unitPrice * qty)}</strong>
               </div>
-              {item.available ? (
+              {item.pricePending ? (
+                <button className="btn btn--primary btn--block btn--lg" disabled>
+                  Price coming soon
+                </button>
+              ) : item.available ? (
                 <button className="btn btn--primary btn--block btn--lg" onClick={add}>
                   {status.isOpen ? 'Add to order' : 'Add to pre-order'} · {formatNaira(unitPrice * qty)}
                 </button>

@@ -26,7 +26,7 @@ export default function Footer() {
         <div>
           <h4>Menu</h4>
           <Link to="/menu?tab=plates">Plates</Link>
-          <Link to="/menu?tab=buckets">Buckets</Link>
+          <Link to="/menu?tab=buckets">Bowls & bulk orders</Link>
           <Link to="/workplace">Workplace & corporate</Link>
         </div>
 

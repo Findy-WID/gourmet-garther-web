@@ -33,7 +33,7 @@ export default function CartDrawer() {
 
         {lines.length === 0 ? (
           <div className="drawer__empty">
-            <p>Nothing here yet. Pick a plate or a bucket to get started.</p>
+            <p>Nothing here yet. Pick a plate or a bowl to get started.</p>
             <button
               className="btn btn--primary"
               onClick={() => {
@@ -50,7 +50,7 @@ export default function CartDrawer() {
               {lines.map((l) => (
                 <li key={l.key} className="cart-line">
                   <div className="cart-line__top">
-                    <strong>{l.name}</strong>
+                    <strong>{l.name}{l.section === 'buckets' && /litre/i.test(l.unit || '') ? ` (${l.unit})` : ''}</strong>
                     <span>{formatNaira(l.unitPrice * l.qty)}</span>
                   </div>
                   {lineDetail(l) && <p className="cart-line__detail">{lineDetail(l)}</p>}

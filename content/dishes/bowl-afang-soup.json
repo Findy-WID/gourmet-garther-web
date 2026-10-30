@@ -1,0 +1,19 @@
+{
+  "name": "Afang Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 29000,
+  "unit": "2 litres",
+  "description": "",
+  "image": "/images/menu/afang.webp",
+  "includes": [
+    "2 litres of Afang Soup"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 1100,
+  "choiceGroups": [],
+  "extrasGroup": "bowl-extras"
+}

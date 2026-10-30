@@ -54,13 +54,14 @@ collections:
         widget: number
         value_type: int
         min: 0
-        hint: Starting price in Naira, before choices and extras. Numbers only, e.g. 6500
+        required: false
+        hint: Base price in Naira, before proteins and extras. Numbers only, e.g. 6500. Leave empty to show “Price coming soon”.
       - label: Menu section
         name: section
         widget: select
         options:
           - { label: Plates, value: plates }
-          - { label: Buckets, value: buckets }
+          - { label: Bowls & bulk, value: buckets }
           - { label: Workplace / corporate, value: corporate }
       - label: Category
         name: category
@@ -72,6 +73,17 @@ collections:
         required: false
         hint: Short line under the name, e.g. “1 plate” or “Serves 4 to 6”
       - { label: Description, name: description, widget: text, required: false }
+      - label: What’s included
+        name: includes
+        widget: list
+        required: false
+        field: { label: Item, name: item, widget: string }
+        hint: Shown in the “What’s included” dropdown, e.g. “2 litres of Afang soup”.
+      - label: Protein note
+        name: proteinNote
+        widget: string
+        required: false
+        hint: e.g. “No protein included. Choose your proteins below and they’re added to your total.”
       - label: Available to order
         name: available
         widget: boolean

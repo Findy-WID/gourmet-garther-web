@@ -1,0 +1,20 @@
+{
+  "name": "Ekpang Nkukwo",
+  "section": "buckets",
+  "category": "Stew & Ekpang",
+  "price": 28000,
+  "unit": "2 litres",
+  "description": "",
+  "image": "/images/menu/ekpang-nkukwo.webp",
+  "includes": [
+    "2 litres of Ekpang Nkukwo",
+    "Proteins included: goat meat, kpomo (ponmo), periwinkle and fish"
+  ],
+  "proteinNote": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1301,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

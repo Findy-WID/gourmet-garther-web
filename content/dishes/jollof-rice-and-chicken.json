@@ -11,5 +11,9 @@
   "minQty": 1,
   "sort": 111,
   "choiceGroups": [],
-  "extrasGroup": "add-protein"
+  "extrasGroup": "add-protein",
+  "includes": [
+    "Jollof rice",
+    "Chicken"
+  ]
 }

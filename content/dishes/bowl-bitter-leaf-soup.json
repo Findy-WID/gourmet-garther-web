@@ -1,0 +1,19 @@
+{
+  "name": "Bitter Leaf Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 27000,
+  "unit": "2 litres",
+  "description": "",
+  "image": "",
+  "includes": [
+    "2 litres of Bitter Leaf Soup"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1106,
+  "choiceGroups": [],
+  "extrasGroup": "bowl-extras"
+}

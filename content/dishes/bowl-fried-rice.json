@@ -1,0 +1,19 @@
+{
+  "name": "Fried Rice",
+  "section": "buckets",
+  "category": "Rice",
+  "price": 21000,
+  "unit": "2 litres · about 6 servings",
+  "description": "",
+  "image": "",
+  "includes": [
+    "2 litres of Fried Rice (about 6 servings)"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1200,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

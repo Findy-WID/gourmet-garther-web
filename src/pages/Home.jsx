@@ -8,12 +8,12 @@ import { HOURS_SUMMARY, RESTAURANT } from '../config'
 // Photos for the "What are you ordering for?" cards. Leave empty to show the drawn placeholder.
 const SECTION_PHOTOS = {
   plates: '/images/site/rice-and-pasta-spread.webp',
-  buckets: '',
+  buckets: '/images/menu/afang.webp',
   corporate: '/images/site/catering.webp',
 }
 
 const STEPS = [
-  { title: 'Pick your food', body: 'Choose plates, buckets or a workplace pack, with your protein and extras.' },
+  { title: 'Pick your food', body: 'Choose plates, bowls, bulk combos or a workplace pack, then add the proteins you want.' },
   { title: 'Tell us how and when', body: 'One-time, weekly or monthly. Delivery to your address, or pick it up yourself.' },
   { title: 'Send it on WhatsApp', body: 'Your full order lands in our WhatsApp. We confirm it there and send payment details.' },
 ]

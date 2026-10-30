@@ -1,0 +1,31 @@
+{
+  "name": "₦250k Bulk Combo",
+  "section": "buckets",
+  "category": "Bulk combos",
+  "price": 250000,
+  "unit": "",
+  "description": "",
+  "image": "",
+  "includes": [
+    "4 litres of stew",
+    "4 litres of soup (your first choice)",
+    "4 litres of soup (your second choice)",
+    "4 litres of Ekpang Nkukwo",
+    "2 litres of steamed rice",
+    "1 litre of fried plantain",
+    "10 wraps of swallow",
+    "1 litre of fruit salad",
+    "1 litre of Hollandia yoghurt"
+  ],
+  "proteinNote": "Proteins aren’t listed in this combo. Add the ones you want below.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1005,
+  "choiceGroups": [
+    "combo-soup-1",
+    "combo-soup-2",
+    "combo-swallow"
+  ],
+  "extrasGroup": "add-protein"
+}

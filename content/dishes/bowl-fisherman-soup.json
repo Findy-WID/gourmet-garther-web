@@ -1,0 +1,19 @@
+{
+  "name": "Fisherman Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 33000,
+  "unit": "2 litres",
+  "description": "",
+  "image": "",
+  "includes": [
+    "2 litres of Fisherman Soup"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1109,
+  "choiceGroups": [],
+  "extrasGroup": "bowl-extras"
+}

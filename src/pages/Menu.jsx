@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { SECTIONS, groupsIn, itemsIn } from '../data/menu'
 import ItemCard from '../components/ItemCard'
+import categories from '../../content/categories.json'
 
 export default function Menu() {
   const [params, setParams] = useSearchParams()
@@ -32,7 +33,7 @@ export default function Menu() {
       <div className="container">
         <header className="page-head">
           <h1>The menu</h1>
-          <p>Plates for one, buckets for the house, and packs for the office.</p>
+          <p>Plates for one, bowls and bulk combos for the house, and packs for the office.</p>
         </header>
 
         <div className="tabs" role="tablist" aria-label="Menu sections">
@@ -80,6 +81,7 @@ export default function Menu() {
               <h2 id={`grp-${g}`} className="menu-group__title">
                 {g}
               </h2>
+              {categories[tab]?.[g] && <p className="menu-group__intro">{categories[tab][g]}</p>}
               <div className="grid">
                 {items
                   .filter((m) => m.group === g)
@@ -90,11 +92,14 @@ export default function Menu() {
             </section>
           ))
         ) : items.length ? (
+          <>
+          {group !== 'All' && categories[tab]?.[group] && <p className="menu-group__intro">{categories[tab][group]}</p>}
           <div className="grid">
             {items.map((item) => (
               <ItemCard key={item.id} item={item} />
             ))}
           </div>
+          </>
         ) : (
           <div className="empty">
             <p>Nothing matches “{query}”. Try another word, or clear the search.</p>

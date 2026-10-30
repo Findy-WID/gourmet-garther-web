@@ -1,0 +1,19 @@
+{
+  "name": "Egusi Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 27000,
+  "unit": "2 litres",
+  "description": "",
+  "image": "/images/menu/egusi.webp",
+  "includes": [
+    "2 litres of Egusi Soup"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": true,
+  "available": true,
+  "minQty": 1,
+  "sort": 1102,
+  "choiceGroups": [],
+  "extrasGroup": "bowl-extras"
+}

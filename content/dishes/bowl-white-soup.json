@@ -1,0 +1,19 @@
+{
+  "name": "White Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 29000,
+  "unit": "2 litres",
+  "description": "",
+  "image": "",
+  "includes": [
+    "2 litres of White Soup"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1108,
+  "choiceGroups": [],
+  "extrasGroup": "bowl-extras"
+}

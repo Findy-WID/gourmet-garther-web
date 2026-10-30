@@ -1,0 +1,19 @@
+{
+  "name": "Chicken Stew",
+  "section": "buckets",
+  "category": "Stew & Ekpang",
+  "price": 32900,
+  "unit": "2 litres",
+  "description": "",
+  "image": "/images/menu/stew.webp",
+  "includes": [
+    "2 litres of chicken stew"
+  ],
+  "proteinNote": "",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1300,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

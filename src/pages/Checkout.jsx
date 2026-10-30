@@ -226,7 +226,7 @@ export default function Checkout() {
       <div className="page">
         <div className="container narrow empty empty--page">
           <h1>Your order is empty</h1>
-          <p>Add a plate, a bucket or a workplace pack, then come back to check out.</p>
+          <p>Add a plate, a bowl or a workplace pack, then come back to check out.</p>
           <Link to="/menu" className="btn btn--primary">
             Browse the menu
           </Link>
@@ -243,7 +243,8 @@ export default function Checkout() {
           <li key={l.key}>
             <div className="summary__row">
               <span>
-                {l.name} <span className="muted">x{l.qty}</span>
+                {l.name}
+                {l.section === 'buckets' && /litre/i.test(l.unit || '') ? ` (${l.unit})` : ''} <span className="muted">x{l.qty}</span>
               </span>
               <span>{formatNaira(l.unitPrice * l.qty)}</span>
             </div>

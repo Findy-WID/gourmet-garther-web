@@ -1,0 +1,26 @@
+{
+  "name": "₦50k Bulk Combo",
+  "section": "buckets",
+  "category": "Bulk combos",
+  "price": 50000,
+  "unit": "",
+  "description": "",
+  "image": "",
+  "includes": [
+    "1.5 litres of chicken stew",
+    "1 litre of steamed rice",
+    "1.5 litres of Afang soup",
+    "1.5 litres of soup or Ekpang Nkukwo (your choice)",
+    "3 wraps of swallow"
+  ],
+  "proteinNote": "Proteins aren’t listed in this combo. Add the ones you want below.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1001,
+  "choiceGroups": [
+    "combo-soup-or-ekpang",
+    "combo-swallow"
+  ],
+  "extrasGroup": "add-protein"
+}

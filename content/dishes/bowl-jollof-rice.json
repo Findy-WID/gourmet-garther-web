@@ -1,0 +1,19 @@
+{
+  "name": "Jollof Rice",
+  "section": "buckets",
+  "category": "Rice",
+  "price": 19500,
+  "unit": "2 litres · about 6 servings",
+  "description": "",
+  "image": "/images/menu/jollof-bowl.webp",
+  "includes": [
+    "2 litres of Jollof Rice (about 6 servings)"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1201,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

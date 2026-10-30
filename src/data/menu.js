@@ -21,9 +21,9 @@ export const SECTIONS = [
   },
   {
     id: 'buckets',
-    name: 'Buckets',
-    short: 'Big portions for the family or the week',
-    long: 'Stews, soups and rice in sealed buckets. Feed the house, or stock your freezer for the week.',
+    name: 'Bowls & Bulk',
+    short: '2-litre bowls and bulk combos',
+    long: '2-litre bowls of soup, rice and stew, plus bulk combos for the family, the week or a party. Prices are for the base food: add the proteins you want and they’re added to your total.',
   },
   {
     id: 'corporate',
@@ -71,9 +71,13 @@ export const MENU = Object.entries(dishFiles)
       name: d.name,
       section: d.section,
       group: d.category || 'Other',
+      // No price yet (e.g. a new dish waiting for the owner's price): shown as "Price coming soon", can't be ordered
+      pricePending: d.price === null || d.price === undefined || d.price === '',
       price: Number(d.price) || 0,
       unit: d.unit || '',
       description: d.description || '',
+      includes: d.includes || [],
+      proteinNote: d.proteinNote || '',
       image: d.image || '',
       popular: !!d.popular,
       available: d.available !== false,

@@ -2448,3 +2448,58 @@ button {
   margin: 0;
   max-width: 60ch;
 }
+
+/* ── What's included + price states ─────────────────────── */
+
+.product__price-note {
+  font-family: var(--body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.includes {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 4px 18px 14px;
+  margin: 8px 0 4px;
+  background: var(--blush);
+}
+.includes summary {
+  cursor: pointer;
+  font-family: var(--display);
+  font-weight: 700;
+  padding: 10px 0 4px;
+}
+.includes ul {
+  margin: 6px 0 8px;
+  padding-left: 20px;
+}
+.includes li {
+  margin: 3px 0;
+}
+.includes__note {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  border-radius: var(--r-sm);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.item-card__price--pending {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.menu-group__intro {
+  margin: -8px 0 20px;
+  color: var(--muted);
+  max-width: 60ch;
+}
+.menu-group__title:has(+ .menu-group__intro) {
+  margin-bottom: 18px;
+}
+
+.item-card__name + .item-card__foot {
+  padding-top: 12px;
+}

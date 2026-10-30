@@ -40,8 +40,15 @@ export function scheduleText(d) {
   return `${prettyDate(d.date)}${d.time ? `, ${prettyTime(d.time)}` : ''}`
 }
 
+// "Choose your second soup" -> "Second soup"
+const shortGroup = (g) => {
+  const s = String(g || '').replace(/^choose (your |the )?/i, '')
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
 export function lineDetail(line) {
-  const parts = line.choices.map((c) => c.label)
+  // With several choices (e.g. bulk combos), say which choice is which
+  const parts = line.choices.map((c) => (line.choices.length > 1 ? `${shortGroup(c.group)}: ${c.label}` : c.label))
   line.extras.forEach((e) => parts.push(`${e.label} x${e.qty}`))
   return parts.join(', ')
 }
@@ -55,7 +62,8 @@ export function buildWhatsAppMessage({ details, lines, subtotal, reference, isPr
   out.push('')
   out.push('*Items*')
   lines.forEach((l, i) => {
-    out.push(`${i + 1}. ${l.name} x${l.qty} — ${formatNaira(l.unitPrice * l.qty)}`)
+    const size = l.section === 'buckets' && /litre/i.test(l.unit || '') ? ` (${l.unit})` : ''
+    out.push(`${i + 1}. ${l.name}${size} x${l.qty} — ${formatNaira(l.unitPrice * l.qty)}`)
     const detail = lineDetail(l)
     if (detail) out.push(`   ${detail}`)
   })

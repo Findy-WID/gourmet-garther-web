@@ -1,0 +1,29 @@
+{
+  "name": "₦100k Bulk Combo",
+  "section": "buckets",
+  "category": "Bulk combos",
+  "price": 100000,
+  "unit": "",
+  "description": "",
+  "image": "",
+  "includes": [
+    "2.5 litres of stew",
+    "2.5 litres of soup (your first choice)",
+    "2.5 litres of soup (your second choice)",
+    "1 litre of steamed rice",
+    "6 wraps of swallow",
+    "2 litres of goat meat pepper soup with yam or plantain"
+  ],
+  "proteinNote": "Proteins aren’t listed in this combo. Add the ones you want below.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1002,
+  "choiceGroups": [
+    "combo-soup-1",
+    "combo-soup-2",
+    "combo-pepper-soup-side",
+    "combo-swallow"
+  ],
+  "extrasGroup": "add-protein"
+}

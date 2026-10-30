@@ -1,0 +1,19 @@
+{
+  "name": "Atama Abak Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 29500,
+  "unit": "2 litres",
+  "description": "",
+  "image": "/images/menu/atama-abak.webp",
+  "includes": [
+    "2 litres of Atama Abak Soup"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1103,
+  "choiceGroups": [],
+  "extrasGroup": "bowl-extras"
+}

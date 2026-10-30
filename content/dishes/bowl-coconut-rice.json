@@ -1,0 +1,19 @@
+{
+  "name": "Coconut Rice",
+  "section": "buckets",
+  "category": "Rice",
+  "price": 23000,
+  "unit": "2 litres · about 6 servings",
+  "description": "",
+  "image": "",
+  "includes": [
+    "2 litres of Coconut Rice (about 6 servings)"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1202,
+  "choiceGroups": [],
+  "extrasGroup": "add-protein"
+}

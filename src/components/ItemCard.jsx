@@ -18,13 +18,19 @@ export default function ItemCard({ item }) {
       </div>
       <div className="item-card__body">
         <h3 className="item-card__name">{item.name}</h3>
-        <p className="item-card__unit">{item.unit}</p>
+        {item.unit && <p className="item-card__unit">{item.unit}</p>}
         <div className="item-card__foot">
-          <span className="item-card__price">
-            {fromPrice && <small>from </small>}
-            {formatNaira(item.price)}
-          </span>
-          <span className="item-card__cta">{!item.available ? 'Sold out' : isOpen ? 'Order' : 'Pre-order'}</span>
+          {item.pricePending ? (
+            <span className="item-card__price item-card__price--pending">Price coming soon</span>
+          ) : (
+            <span className="item-card__price">
+              {fromPrice && <small>from </small>}
+              {formatNaira(item.price)}
+            </span>
+          )}
+          {!item.pricePending && (
+            <span className="item-card__cta">{!item.available ? 'Sold out' : isOpen ? 'Order' : 'Pre-order'}</span>
+          )}
         </div>
       </div>
     </Link>

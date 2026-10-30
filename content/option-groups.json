@@ -123,40 +123,6 @@
       ]
     },
     {
-      "id": "bucket-size",
-      "name": "Buckets: size",
-      "label": "Choose a size",
-      "options": [
-        {
-          "label": "Medium — serves 4 to 6",
-          "price": 0
-        },
-        {
-          "label": "Large — serves 8 to 10",
-          "price": 12000
-        }
-      ]
-    },
-    {
-      "id": "heat",
-      "name": "Pepper level",
-      "label": "How hot?",
-      "options": [
-        {
-          "label": "Mild",
-          "price": 0
-        },
-        {
-          "label": "Medium",
-          "price": 0
-        },
-        {
-          "label": "Very hot",
-          "price": 0
-        }
-      ]
-    },
-    {
       "id": "lunch-rice",
       "name": "Lunch pack: rice",
       "label": "Choose the rice",
@@ -244,6 +210,201 @@
         {
           "label": "Jollof + coconut rice",
           "price": 5000
+        }
+      ]
+    },
+    {
+      "id": "combo-soup-1",
+      "name": "Combo: soup choice",
+      "label": "Choose your soup",
+      "options": [
+        {
+          "label": "Afang Soup",
+          "price": 0
+        },
+        {
+          "label": "Editan Soup",
+          "price": 0
+        },
+        {
+          "label": "Egusi Soup",
+          "price": 0
+        },
+        {
+          "label": "Atama Abak Soup",
+          "price": 0
+        },
+        {
+          "label": "Vegetable Soup",
+          "price": 0
+        },
+        {
+          "label": "Okra Soup",
+          "price": 0
+        },
+        {
+          "label": "Bitter Leaf Soup",
+          "price": 0
+        },
+        {
+          "label": "Ogbono Soup",
+          "price": 0
+        },
+        {
+          "label": "White Soup",
+          "price": 0
+        },
+        {
+          "label": "Fisherman Soup",
+          "price": 0
+        },
+        {
+          "label": "Mushroom Soup",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "id": "combo-soup-2",
+      "name": "Combo: second soup",
+      "label": "Choose your second soup",
+      "options": [
+        {
+          "label": "Afang Soup",
+          "price": 0
+        },
+        {
+          "label": "Editan Soup",
+          "price": 0
+        },
+        {
+          "label": "Egusi Soup",
+          "price": 0
+        },
+        {
+          "label": "Atama Abak Soup",
+          "price": 0
+        },
+        {
+          "label": "Vegetable Soup",
+          "price": 0
+        },
+        {
+          "label": "Okra Soup",
+          "price": 0
+        },
+        {
+          "label": "Bitter Leaf Soup",
+          "price": 0
+        },
+        {
+          "label": "Ogbono Soup",
+          "price": 0
+        },
+        {
+          "label": "White Soup",
+          "price": 0
+        },
+        {
+          "label": "Fisherman Soup",
+          "price": 0
+        },
+        {
+          "label": "Mushroom Soup",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "id": "combo-soup-or-ekpang",
+      "name": "Combo: soup or Ekpang",
+      "label": "Soup or Ekpang Nkukwo",
+      "options": [
+        {
+          "label": "Ekpang Nkukwo",
+          "price": 0
+        },
+        {
+          "label": "Afang Soup",
+          "price": 0
+        },
+        {
+          "label": "Editan Soup",
+          "price": 0
+        },
+        {
+          "label": "Egusi Soup",
+          "price": 0
+        },
+        {
+          "label": "Atama Abak Soup",
+          "price": 0
+        },
+        {
+          "label": "Vegetable Soup",
+          "price": 0
+        },
+        {
+          "label": "Okra Soup",
+          "price": 0
+        },
+        {
+          "label": "Bitter Leaf Soup",
+          "price": 0
+        },
+        {
+          "label": "Ogbono Soup",
+          "price": 0
+        },
+        {
+          "label": "White Soup",
+          "price": 0
+        },
+        {
+          "label": "Fisherman Soup",
+          "price": 0
+        },
+        {
+          "label": "Mushroom Soup",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "id": "combo-swallow",
+      "name": "Combo: swallow",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Garri",
+          "price": 0
+        },
+        {
+          "label": "Fufu",
+          "price": 0
+        },
+        {
+          "label": "Semo",
+          "price": 0
+        },
+        {
+          "label": "A mix (tell us in the notes)",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "id": "combo-pepper-soup-side",
+      "name": "Combo: pepper soup with",
+      "label": "Goat meat pepper soup with",
+      "options": [
+        {
+          "label": "Yam",
+          "price": 0
+        },
+        {
+          "label": "Plantain",
+          "price": 0
         }
       ]
     }
@@ -404,43 +565,6 @@
       ]
     },
     {
-      "id": "bucket-proteins",
-      "name": "Buckets: proteins by the piece",
-      "max": 12,
-      "items": [
-        {
-          "label": "Chicken",
-          "price": 3000,
-          "note": "per piece"
-        },
-        {
-          "label": "Turkey",
-          "price": 4000,
-          "note": "per piece"
-        },
-        {
-          "label": "Beef",
-          "price": 1500,
-          "note": "per piece"
-        },
-        {
-          "label": "Goat meat",
-          "price": 2500,
-          "note": "per piece"
-        },
-        {
-          "label": "Croaker fish",
-          "price": 3000,
-          "note": "per piece"
-        },
-        {
-          "label": "Assorted (shaki, ponmo, beef)",
-          "price": 3500,
-          "note": "per portion"
-        }
-      ]
-    },
-    {
       "id": "lunch-extras",
       "name": "Lunch pack: extras",
       "max": 0,
@@ -504,6 +628,98 @@
         {
           "label": "Pack of bottled water",
           "price": 3500,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "bowl-extras",
+      "name": "Bowls: proteins & swallow",
+      "max": 0,
+      "items": [
+        {
+          "label": "Goatmeat",
+          "price": 3000,
+          "note": "per portion"
+        },
+        {
+          "label": "Beef",
+          "price": 3000,
+          "note": "per portion"
+        },
+        {
+          "label": "Chicken",
+          "price": 3000,
+          "note": "per portion"
+        },
+        {
+          "label": "Drumsticks",
+          "price": 4000,
+          "note": "per portion"
+        },
+        {
+          "label": "Turkey",
+          "price": 7000,
+          "note": "per portion"
+        },
+        {
+          "label": "Fish",
+          "price": 3500,
+          "note": "per portion"
+        },
+        {
+          "label": "Assorted",
+          "price": 3500,
+          "note": "per portion"
+        },
+        {
+          "label": "Intestines",
+          "price": 1500,
+          "note": "per portion"
+        },
+        {
+          "label": "Shaki",
+          "price": 1500,
+          "note": "per portion"
+        },
+        {
+          "label": "Ponmo",
+          "price": 1000,
+          "note": "per portion"
+        },
+        {
+          "label": "Panla",
+          "price": 1000,
+          "note": "per portion"
+        },
+        {
+          "label": "Garri (1 wrap)",
+          "price": 1000,
+          "note": ""
+        },
+        {
+          "label": "Fufu (1 wrap)",
+          "price": 1000,
+          "note": ""
+        },
+        {
+          "label": "Semo (1 wrap)",
+          "price": 1500,
+          "note": ""
+        },
+        {
+          "label": "Poundo (1 wrap)",
+          "price": 1500,
+          "note": ""
+        },
+        {
+          "label": "Wheatmeal / oat (1 wrap)",
+          "price": 1500,
+          "note": ""
+        },
+        {
+          "label": "Pounded yam (1 wrap)",
+          "price": 2500,
           "note": ""
         }
       ]

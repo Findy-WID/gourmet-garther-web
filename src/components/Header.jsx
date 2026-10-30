@@ -7,7 +7,7 @@ import Logo from './Logo'
 
 const LINKS = [
   { to: '/menu?tab=plates', label: 'Plates' },
-  { to: '/menu?tab=buckets', label: 'Buckets' },
+  { to: '/menu?tab=buckets', label: 'Bowls & Bulk' },
   { to: '/workplace', label: 'Workplace' },
   { to: '/about', label: 'About' },
   { to: '/careers', label: 'Careers' },

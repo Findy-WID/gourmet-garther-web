@@ -1,0 +1,19 @@
+{
+  "name": "Mushroom Soup",
+  "section": "buckets",
+  "category": "Soups",
+  "price": 25000,
+  "unit": "2 litres",
+  "description": "",
+  "image": "",
+  "includes": [
+    "2 litres of Mushroom Soup"
+  ],
+  "proteinNote": "No protein included. Choose your proteins below and they’re added to your total.",
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 1110,
+  "choiceGroups": [],
+  "extrasGroup": "bowl-extras"
+}
