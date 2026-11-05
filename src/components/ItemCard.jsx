@@ -19,6 +19,13 @@ export default function ItemCard({ item }) {
       <div className="item-card__body">
         <h3 className="item-card__name">{item.name}</h3>
         {item.unit && <p className="item-card__unit">{item.unit}</p>}
+        {item.group === 'Bulk combos' && item.includes.length > 0 && (
+          <ul className="item-card__includes">
+            {item.includes.map((x) => (
+              <li key={x}>{x}</li>
+            ))}
+          </ul>
+        )}
         <div className="item-card__foot">
           {item.pricePending ? (
             <span className="item-card__price item-card__price--pending">Price coming soon</span>

@@ -5,7 +5,7 @@
   "price": 12600,
   "unit": "1 plate",
   "description": "",
-  "image": "",
+  "image": "/images/menu/chicken-stew.webp",
   "popular": false,
   "available": true,
   "minQty": 1,

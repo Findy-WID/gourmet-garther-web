@@ -11,5 +11,9 @@
   "minQty": 1,
   "sort": 112,
   "choiceGroups": [],
-  "extrasGroup": "add-protein"
+  "extrasGroup": "add-protein",
+  "includes": [
+    "Fried rice",
+    "Chicken"
+  ]
 }

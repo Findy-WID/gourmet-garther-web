@@ -640,6 +640,28 @@ button {
   color: var(--muted);
   margin-bottom: 14px;
 }
+.item-card__includes {
+  list-style: none;
+  margin: 6px 0 14px;
+  padding: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.item-card__includes li {
+  position: relative;
+  padding-left: 14px;
+}
+.item-card__includes li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green, #1aa32e);
+}
 .item-card__foot {
   margin-top: auto;
   display: flex;

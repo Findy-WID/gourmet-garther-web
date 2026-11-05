@@ -5,7 +5,7 @@
   "price": 2000,
   "unit": "1 plate",
   "description": "",
-  "image": "",
+  "image": "/images/menu/boiled-plantain.webp",
   "popular": false,
   "available": true,
   "minQty": 1,

@@ -5,7 +5,7 @@
   "price": 3700,
   "unit": "1 plate",
   "description": "Plain spaghetti served with stew.",
-  "image": "",
+  "image": "/images/menu/white-pasta-and-stew.webp",
   "popular": false,
   "available": true,
   "minQty": 1,

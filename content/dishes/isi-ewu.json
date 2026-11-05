@@ -1,17 +1,15 @@
 {
   "name": "Isi Ewu",
   "section": "plates",
-  "category": "Soups",
+  "category": "Special dishes",
   "price": 12000,
   "unit": "1 plate",
   "description": "",
-  "image": "",
+  "image": "/images/menu/isi-ewu.webp",
   "popular": false,
   "available": true,
   "minQty": 1,
-  "sort": 414,
-  "choiceGroups": [
-    "swallow-gfs"
-  ],
-  "extrasGroup": "soup-extras"
+  "sort": 14,
+  "choiceGroups": [],
+  "extrasGroup": ""
 }

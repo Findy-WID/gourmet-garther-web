@@ -5,7 +5,7 @@
   "price": 16200,
   "unit": "1 plate",
   "description": "",
-  "image": "",
+  "image": "/images/menu/catfish-stew.webp",
   "popular": false,
   "available": true,
   "minQty": 1,

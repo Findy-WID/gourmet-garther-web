@@ -1,8 +1,8 @@
 {
-  "name": "Spaghetti Napolitan",
+  "name": "Spaghetti Napolitano",
   "section": "plates",
   "category": "Pasta",
-  "price": null,
+  "price": 7000,
   "unit": "1 plate",
   "description": "",
   "image": "/images/menu/spaghetti-napolitan.webp",
