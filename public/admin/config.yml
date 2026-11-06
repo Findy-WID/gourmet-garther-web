@@ -78,7 +78,7 @@ collections:
         widget: list
         required: false
         field: { label: Item, name: item, widget: string }
-        hint: Shown in the “What’s included” dropdown, e.g. “2 litres of Afang soup”.
+        hint: Shown in the “What’s included” dropdown on the dish page. Use it for what comes with the dish, including any base proteins cooked into it, e.g. Afang Soup → “Stockfish”, “Periwinkle”. Leave empty to hide the dropdown.
       - label: Protein note
         name: proteinNote
         widget: string
