@@ -1,12 +1,12 @@
 # ─────────────────────────────────────────────────────────────
 # Gourmet Gather admin panel (Sveltia CMS)
 #
-# ONE THING TO SET: replace the repo below with your GitHub
-# username and repository name, e.g.  findy/gourmet-gather-web
+# Edits are saved as commits to the GitHub repo below; Vercel
+# rebuilds the site about a minute later.
 # ─────────────────────────────────────────────────────────────
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/gourmet-gather-web
+  repo: Findy-WID/gourmet-garther-web
   branch: main
   commit_messages:
     create: 'Admin: add {{collection}} “{{slug}}”'
@@ -18,9 +18,9 @@ backend:
 logo:
   src: /brand/icon-512.png
 
-# Uploaded photos are saved to public/images and shown on the site as /images/…
-media_folder: public/images
-public_folder: /images
+# Uploaded photos are saved to public/images/menu and shown on the site as /images/menu/…
+media_folder: public/images/menu
+public_folder: /images/menu
 
 collections:
   # ── Dishes ────────────────────────────────────────────────
@@ -218,56 +218,9 @@ collections:
 
   # ── Pages ─────────────────────────────────────────────────
   - name: pages
-    label: Pages
-    description: About page and careers (job openings).
+    label: Careers
+    description: Job openings. Switch a role to Closed, add a new one, or delete it.
     files:
-      - name: about
-        label: About page
-        file: content/about.json
-        format: json
-        fields:
-          - { label: Still draft text, name: placeholder, widget: boolean, default: false, required: false }
-          - { label: Title, name: title, widget: string }
-          - { label: Opening line, name: intro, widget: text }
-          - { label: Top photo, name: image, widget: image, required: false }
-          - label: How we started
-            name: story
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: text, widget: text } }
-              - label: Opening date
-                name: milestone
-                widget: object
-                fields:
-                  - { label: Date, name: date, widget: string }
-                  - { label: Text, name: text, widget: string }
-          - label: What we cook
-            name: cook
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Intro, name: intro, widget: text }
-              - label: Highlights
-                name: highlights
-                widget: list
-                summary: '{{fields.title}}'
-                fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Text, name: body, widget: text }
-                  - { label: Link (e.g. /menu/abak-atama), name: link, widget: string, required: false }
-          - label: What makes us different
-            name: different
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Text, name: body, widget: text }
-          - label: Photo gallery
-            name: gallery
-            widget: list
-            fields:
-              - { label: Photo, name: src, widget: image }
-              - { label: Description, name: alt, widget: string }
       - name: careers
         label: Careers
         file: content/careers.json
