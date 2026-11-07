@@ -8,13 +8,14 @@
     "Young and vibrant applicants only",
     "No students, please"
   ],
-  "openToAll": "",
+  "openToAll": "We are good",
   "positions": [
     {
       "title": "Business Development Manager",
       "location": "Uyo",
-      "open": true,
+      "type": "",
       "note": "",
+      "open": true,
       "summary": [
         "Some people wait for opportunities. Others create them. At Gourmet Gather, we’re looking for the second kind.",
         "We’re searching for a Business Development Manager (Female) who understands that growth doesn’t happen by chance. It happens because someone is constantly looking for the next customer, the next partnership, the next idea and the next opportunity.",
@@ -28,8 +29,9 @@
     {
       "title": "Chef",
       "location": "Uyo",
-      "open": true,
+      "type": "",
       "note": "Female applicants",
+      "open": true,
       "summary": [
         "See the full job description for duties and requirements."
       ],
@@ -40,8 +42,9 @@
     {
       "title": "Cook",
       "location": "Uyo",
-      "open": true,
+      "type": "",
       "note": "",
+      "open": true,
       "summary": [],
       "requirements": [
         "Proven cooking skills and experience",
@@ -50,6 +53,21 @@
         "Ability to keep the kitchen clean"
       ],
       "schedule": "One day in, one day out",
+      "jdLink": ""
+    },
+    {
+      "title": "Job Check",
+      "location": "Uyo",
+      "type": "Afang Specialist",
+      "note": "Just a test application",
+      "open": true,
+      "summary": [
+        "Good cook"
+      ],
+      "requirements": [
+        "Tall"
+      ],
+      "schedule": "",
       "jdLink": ""
     }
   ]
