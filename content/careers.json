@@ -54,21 +54,6 @@
       ],
       "schedule": "One day in, one day out",
       "jdLink": ""
-    },
-    {
-      "title": "Job Check",
-      "location": "Uyo",
-      "type": "Afang Specialist",
-      "note": "Just a test application",
-      "open": true,
-      "summary": [
-        "Good cook"
-      ],
-      "requirements": [
-        "Tall"
-      ],
-      "schedule": "",
-      "jdLink": ""
     }
   ]
 }
