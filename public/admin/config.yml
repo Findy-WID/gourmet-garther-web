@@ -22,6 +22,19 @@ logo:
 media_folder: public/images/menu
 public_folder: /images/menu
 
+# Photos are shrunk and converted to WebP in the browser as they're uploaded,
+# so the owner can upload straight from his phone (JPG, PNG or iPhone HEIC).
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 80
+          width: 1000
+          height: 1000
+
 collections:
   # ── Dishes ────────────────────────────────────────────────
   - name: dishes
@@ -129,7 +142,7 @@ collections:
         value_field: '{{choices.*.id}}'
         display_fields: ['{{choices.*.name}}']
         search_fields: ['{{choices.*.name}}']
-        hint: e.g. “Plates — protein”. Edit the options and their prices under “Choices & extras”.
+        hint: 'The pick-one questions this dish asks, e.g. “Swallow: Garri or Fufu”. Edit them under “Proteins & options”.'
       - label: Extras (optional add-ons)
         name: extrasGroup
         widget: relation
@@ -142,15 +155,15 @@ collections:
 
   # ── Shared choices and extras ─────────────────────────────
   - name: options
-    label: Choices & extras
-    description: Protein choices, sizes, sides and add-ons shared between dishes. Changing a price here updates every dish that uses it.
+    label: Proteins & options
+    description: The pop-ups customers see when they order — which swallow, which soup, extra proteins and their prices. One list is shared by many dishes, so a price changed here changes on every dish that uses it.
     files:
       - name: groups
-        label: Choices & extras
+        label: Proteins & options
         file: content/option-groups.json
         format: json
         fields:
-          - label: Choices (customer picks one)
+          - label: Pick-one questions (e.g. which swallow, which soup)
             name: choices
             widget: list
             collapsed: true
@@ -182,7 +195,7 @@ collections:
                     value_type: int
                     default: 0
                     hint: Added to the dish price. 0 = no change. Use a minus number for cheaper, e.g. -500
-          - label: Extras (customer adds any quantity)
+          - label: Add-ons with prices (e.g. proteins)
             name: extras
             widget: list
             collapsed: true
