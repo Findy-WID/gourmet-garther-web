@@ -48,9 +48,12 @@ export default function Careers() {
                   </span>
                 </div>
 
-                {r.summary?.map((p) => (
-                  <p key={p.slice(0, 20)}>{p}</p>
-                ))}
+                {(Array.isArray(r.summary) ? r.summary : String(r.summary || '').split(/\n\s*\n/))
+                  .map((p) => p.trim())
+                  .filter(Boolean)
+                  .map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
 
                 {r.requirements?.length > 0 && (
                   <>

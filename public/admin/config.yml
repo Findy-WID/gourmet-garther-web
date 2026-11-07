@@ -245,7 +245,7 @@ collections:
           - { label: WhatsApp number as shown, name: applyWhatsappDisplay, widget: string }
           - { label: How to apply, name: howToApply, widget: text }
           - { label: General requirements, name: generalRequirements, widget: list, required: false, field: { label: Requirement, name: item, widget: string } }
-          - { label: Closing note, name: openToAll, widget: text }
+          - { label: Closing note (optional), name: openToAll, widget: text, required: false, hint: 'Small line under How to apply. Leave empty to hide it.' }
           - label: Open positions
             name: positions
             widget: list
@@ -256,7 +256,7 @@ collections:
               - { label: Type (e.g. Full-time), name: type, widget: string, required: false }
               - { label: Note (e.g. Female applicants), name: note, widget: string, required: false }
               - { label: Open, name: open, widget: boolean, default: true, hint: 'On = shows as Open with apply buttons. Off = shows as Closed. Delete the role to remove it completely.' }
-              - { label: Description paragraphs, name: summary, widget: list, required: false, field: { label: Paragraph, name: text, widget: text } }
+              - { label: Job description, name: summary, widget: text, required: false, hint: 'Write it like a normal message. Leave an empty line between paragraphs.' }
               - { label: Requirements, name: requirements, widget: list, required: false, field: { label: Requirement, name: item, widget: string } }
               - { label: Work schedule, name: schedule, widget: string, required: false }
               - { label: Job description link (Google Doc), name: jdLink, widget: string, required: false }
