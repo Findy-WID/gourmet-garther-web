@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import CartDrawer from './components/CartDrawer'
@@ -13,6 +13,7 @@ import Checkout from './pages/Checkout'
 import NotFound from './pages/NotFound'
 import About from './pages/About'
 import Careers from './pages/Careers'
+import Legal from './pages/Legal'
 import PromoBar from './components/PromoBar'
 
 // /admin is a separate app in public/admin — leave the React site to load it
@@ -56,6 +57,10 @@ export default function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/legal/:slug" element={<Legal />} />
+          <Route path="/privacy" element={<Navigate to="/legal/privacy" replace />} />
+          <Route path="/terms" element={<Navigate to="/legal/terms" replace />} />
           <Route path="/admin" element={<AdminRedirect />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

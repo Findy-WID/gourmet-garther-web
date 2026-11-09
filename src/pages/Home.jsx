@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { MENU, SECTIONS } from '../data/menu'
 import ItemCard from '../components/ItemCard'
+import Testimonials from '../components/Testimonials'
 import FoodImage from '../components/FoodImage'
 import { useStatus } from '../lib/useStatus'
 import { HOURS_SUMMARY, RESTAURANT } from '../config'
@@ -81,7 +82,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--tint">
+      <Testimonials />
+
+      <section className="section">
         <div className="container">
           <div className="section-head section-head--center">
             <div>

@@ -40,7 +40,7 @@ collections:
   - name: dishes
     label: Dishes
     label_singular: Dish
-    description: Every meal on the menu. Change names, prices and photos here, or mark a dish as sold out.
+    description: Every dish on the website. Tap a dish to change its name, price, photo or what’s included. To add a dish, click New Dish — the Order button appears on the website by itself.
     folder: content/dishes
     format: json
     extension: json
@@ -61,78 +61,66 @@ collections:
         name: image
         widget: image
         required: false
-        hint: A square or landscape photo works best. Leave empty to show the drawn placeholder.
+        hint: Upload straight from your phone — it's resized automatically. Leave empty to show the drawn placeholder.
       - label: Price (₦)
         name: price
         widget: number
         value_type: int
         min: 0
         required: false
-        hint: Base price in Naira, before proteins and extras. Numbers only, e.g. 6500. Leave empty to show “Price coming soon”.
-      - label: Menu section
+        hint: Numbers only, e.g. 6500. This is the starting price, before any proteins the customer adds. Leave empty to show “Price coming soon”.
+      - label: Size or serving
+        name: unit
+        widget: string
+        required: false
+        hint: Short line under the name, e.g. “1 plate”, “2 litres”, “Serves 4 to 6”.
+      - label: Menu
         name: section
         widget: select
         options:
           - { label: Plates, value: plates }
           - { label: Bowls & bulk, value: buckets }
-          - { label: Workplace / corporate, value: corporate }
+          - { label: Workplace, value: corporate }
       - label: Category
         name: category
-        widget: string
-        hint: The filter it appears under on the menu page, e.g. Rice, Soups, Lunch packs. Use the same spelling for dishes in the same category.
-      - label: Serving info
-        name: unit
-        widget: string
-        required: false
-        hint: Short line under the name, e.g. “1 plate” or “Serves 4 to 6”
-      - { label: Description, name: description, widget: text, required: false }
+        widget: select
+        options:
+          - Rice
+          - Soups
+          - Pasta
+          - Pepper soups
+          - Sauces & stews
+          - Porridge
+          - Sides & combos
+          - Special dishes
+          - Stew & Ekpang
+          - Bulk combos
+          - Lunch packs
+          - Meetings & events
+        hint: 'The heading it sits under on the menu. Plates use Rice, Soups, Pasta, Pepper soups, Sauces & stews, Porridge, Sides & combos, Special dishes. Bowls & bulk use Soups, Rice, Stew & Ekpang, Bulk combos. Workplace uses Lunch packs, Meetings & events.'
+      - { label: Description, name: description, widget: text, required: false, hint: Optional. One or two sentences shown on the dish page. }
       - label: What’s included
         name: includes
         widget: list
         required: false
         field: { label: Item, name: item, widget: string }
-        hint: Shown in the “What’s included” dropdown on the dish page. Use it for what comes with the dish, including any base proteins cooked into it, e.g. Afang Soup → “Stockfish”, “Periwinkle”. Leave empty to hide the dropdown.
-      - label: Protein note
+        hint: Shown in the “What’s included” dropdown on the dish page. Add one item per line, including any base proteins cooked into it, e.g. Afang Soup → Stockfish, Periwinkle. Leave empty to hide the dropdown.
+      - label: Note under “What’s included”
         name: proteinNote
         widget: string
         required: false
-        hint: e.g. “No protein included. Choose your proteins below and they’re added to your total.”
-      - label: Available to order
-        name: available
-        widget: boolean
-        default: true
-        hint: Switch off to show the dish as “Sold out” without deleting it.
-      - label: Only cooked on certain days
-        name: days
-        widget: select
-        multiple: true
+        hint: Optional, e.g. “Proteins aren’t included. Add the ones you want below.”
+      - label: Proteins & add-ons customers can add
+        name: extrasGroup
+        widget: relation
+        collection: options
+        file: groups
         required: false
-        options: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
-        hint: Leave empty if it’s available every day. e.g. Mushroom Soup → friday
-      - label: Sample dish (not on the real menu yet)
-        name: placeholder
-        widget: boolean
-        default: false
-        required: false
-      - label: Show in “Start with these” on the home page
-        name: popular
-        widget: boolean
-        default: false
-        required: false
-      - label: Minimum quantity
-        name: minQty
-        widget: number
-        value_type: int
-        default: 1
-        min: 1
-        hint: For workplace packs, e.g. 10
-      - label: Order on the menu
-        name: sort
-        widget: number
-        value_type: int
-        default: 500
-        hint: Lower numbers show first.
-      - label: Choices (customer picks one from each)
+        value_field: '{{extras.*.id}}'
+        display_fields: ['{{extras.*.name}}']
+        search_fields: ['{{extras.*.name}}']
+        hint: 'Usually “Add protein” for plates, “Soups: extra protein & swallow” for soups, “Bowls: proteins & swallow” for bowls. Prices are edited under Proteins & options.'
+      - label: Questions the customer must answer
         name: choiceGroups
         widget: relation
         collection: options
@@ -142,21 +130,51 @@ collections:
         value_field: '{{choices.*.id}}'
         display_fields: ['{{choices.*.name}}']
         search_fields: ['{{choices.*.name}}']
-        hint: 'The pick-one questions this dish asks, e.g. “Swallow: Garri or Fufu”. Edit them under “Proteins & options”.'
-      - label: Extras (optional add-ons)
-        name: extrasGroup
-        widget: relation
-        collection: options
-        file: groups
+        hint: 'Optional. E.g. “Swallow: Garri or Fufu” makes the customer pick their swallow.'
+      - label: Available to order
+        name: available
+        widget: boolean
+        default: true
+        hint: Switch off to show “Sold out” without deleting the dish.
+      - label: Only cooked on certain days
+        name: days
+        widget: select
+        multiple: true
         required: false
-        value_field: '{{extras.*.id}}'
-        display_fields: ['{{extras.*.name}}']
-        search_fields: ['{{extras.*.name}}']
+        options:
+          - { label: Monday, value: monday }
+          - { label: Tuesday, value: tuesday }
+          - { label: Wednesday, value: wednesday }
+          - { label: Thursday, value: thursday }
+          - { label: Friday, value: friday }
+          - { label: Saturday, value: saturday }
+          - { label: Sunday, value: sunday }
+        hint: Leave empty if it’s available every day.
+      - label: Feature on the home page
+        name: popular
+        widget: boolean
+        default: false
+        required: false
+        hint: Shows the dish under “Start with these” on the home page.
+      - label: Minimum order
+        name: minQty
+        widget: number
+        value_type: int
+        default: 1
+        min: 1
+        hint: Leave at 1. Workplace packs use a higher number, e.g. 10.
+      - label: Show a “Sample” badge
+        name: placeholder
+        widget: boolean
+        default: false
+        required: false
+        hint: Switch off once the dish has its real name, price and photo.
+      - { name: sort, widget: hidden, default: 500 }
 
   # ── Shared choices and extras ─────────────────────────────
   - name: options
     label: Proteins & options
-    description: The pop-ups customers see when they order — which swallow, which soup, extra proteins and their prices. One list is shared by many dishes, so a price changed here changes on every dish that uses it.
+    description: 'What customers pick when they order. To add, remove or reprice a protein, open “Add-ons with prices” → “Add protein” (plates), “Soups: extra protein & swallow” and “Bowls: proteins & swallow”. A price changed here changes on every dish that uses that list.'
     files:
       - name: groups
         label: Proteins & options
@@ -173,11 +191,7 @@ collections:
                 name: name
                 widget: string
                 hint: How you’ll find this group when linking it to a dish, e.g. “Plates — protein”.
-              - label: Code
-                name: id
-                widget: string
-                pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only']
-                hint: A short code, e.g. plate-protein. Don’t change it once dishes use it.
+              - { name: id, widget: hidden }
               - label: Question shown to customers
                 name: label
                 widget: string
@@ -204,11 +218,7 @@ collections:
               - label: Name (admin only)
                 name: name
                 widget: string
-              - label: Code
-                name: id
-                widget: string
-                pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only']
-                hint: A short code, e.g. plate-extras. Don’t change it once dishes use it.
+              - { name: id, widget: hidden }
               - label: Most pieces allowed in total
                 name: max
                 widget: number
@@ -260,6 +270,59 @@ collections:
               - { label: Requirements, name: requirements, widget: list, required: false, field: { label: Requirement, name: item, widget: string } }
               - { label: Work schedule, name: schedule, widget: string, required: false }
               - { label: Job description link (Google Doc), name: jdLink, widget: string, required: false }
+
+  # ── Customer reviews ──────────────────────────────────────
+  - name: reviews
+    label: Reviews
+    description: Real customer messages shown on the home page under “What our customers say”. Never add a customer’s name or number.
+    files:
+      - name: reviews
+        label: Reviews
+        file: content/testimonials.json
+        format: json
+        fields:
+          - { label: Section title, name: title, widget: string }
+          - { label: Line under the title, name: intro, widget: string, required: false }
+          - label: Reviews
+            name: items
+            widget: list
+            summary: '{{fields.quote}}'
+            hint: The first 6 show straight away; the rest appear when a visitor taps “Read all reviews”. Drag to reorder.
+            fields:
+              - { label: What the customer said, name: quote, widget: text, hint: Copy it as they wrote it. Leave out names and phone numbers. }
+              - { label: Dish (optional), name: dish, widget: string, required: false, hint: e.g. Afang Soup }
+              - label: Where it came from (optional)
+                name: source
+                widget: select
+                required: false
+                options: [WhatsApp, Facebook, Instagram, Messenger, TikTok, Google]
+
+  # ── Legal pages ───────────────────────────────────────────
+  - name: legal
+    label: Legal pages
+    description: Privacy Policy, Refund Policy and Terms of Service. Linked in the footer and at checkout.
+    files:
+      - name: legal
+        label: Legal pages
+        file: content/legal.json
+        format: json
+        fields:
+          - { label: Last updated, name: updated, widget: string, hint: 'Change this whenever you edit a policy, e.g. 9 November 2026.' }
+          - label: Pages
+            name: pages
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: '{{fields.title}}'
+            fields:
+              - { name: slug, widget: hidden }
+              - { label: Title, name: title, widget: string }
+              - { label: Short name (tab), name: short, widget: string }
+              - label: Text
+                name: body
+                widget: text
+                hint: 'Leave an empty line between paragraphs. Start a line with “## ” for a heading and “- ” for a bullet point. Wrap words in **double stars** to make them bold.'
 
   # ── Restaurant settings ───────────────────────────────────
   - name: settings

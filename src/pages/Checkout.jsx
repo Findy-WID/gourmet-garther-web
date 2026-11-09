@@ -392,6 +392,11 @@ export default function Checkout() {
                 )}
               </dl>
 
+              <p className="fine checkout-legal checkout-legal--top">
+                Your name, phone number and address are used only to prepare and deliver this order. See our{' '}
+                <Link to="/legal/privacy">Privacy Policy</Link>, <Link to="/legal/refunds">Refund Policy</Link> and{' '}
+                <Link to="/legal/terms">Terms</Link>.
+              </p>
               <div className="review-actions">
                 <button className="btn btn--whatsapp btn--lg btn--block" onClick={send}>
                   <WhatsAppIcon /> Send order on WhatsApp

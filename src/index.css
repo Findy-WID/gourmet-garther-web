@@ -413,7 +413,8 @@ button {
 /* ── Hero ────────────────────────────────────────────────── */
 
 .hero {
-  background: var(--red);
+  /* Same red-to-orange sweep as the Gourmet Gather flyer */
+  background: linear-gradient(72deg, #ec2127 0%, #ee2a27 22%, #f4562a 52%, #fa7d23 78%, #ff9d1f 100%);
   color: #fff;
   padding: 72px 0 80px;
   overflow: hidden;
@@ -1713,8 +1714,8 @@ button {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.9fr 0.9fr 1fr 1.4fr;
-  gap: 32px;
+  grid-template-columns: 1.3fr 0.9fr 0.9fr 0.9fr 1fr 1.4fr;
+  gap: 28px;
 }
 .footer-tag {
   margin-top: 14px;
@@ -2524,4 +2525,145 @@ button {
 
 .item-card__name + .item-card__foot {
   padding-top: 12px;
+}
+
+/* ── Legal pages ─────────────────────────────────────────── */
+.legal {
+  max-width: 820px;
+}
+.legal__tabs {
+  margin-bottom: 28px;
+}
+.legal__tabs a {
+  text-decoration: none;
+}
+.legal__body h2 {
+  font-size: 1.25rem;
+  margin: 32px 0 10px;
+}
+.legal__body p,
+.legal__body li {
+  line-height: 1.7;
+  color: var(--ink);
+}
+.legal__body p {
+  margin-bottom: 12px;
+}
+.legal__body ul {
+  margin: 0 0 14px;
+  padding-left: 1.2em;
+}
+.legal__body li {
+  margin-bottom: 6px;
+}
+.legal__body a {
+  color: var(--red);
+}
+.checkout-legal {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.checkout-legal--top {
+  margin: 0 0 12px;
+}
+.checkout-legal a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ── Customer reviews ────────────────────────────────────── */
+.reviews .section-head {
+  align-items: flex-end;
+}
+.reviews__arrows {
+  display: flex;
+  gap: 8px;
+}
+.reviews__arrows .icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.reviews__track {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 4px 2px 8px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 48px) / 3);
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.reviews__track::-webkit-scrollbar {
+  display: none;
+}
+.tmonial {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+.tmonial__bubble {
+  flex: 1;
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px 18px 18px 4px;
+  padding: 18px 20px;
+  box-shadow: 0 6px 18px rgba(32, 22, 16, 0.06);
+}
+.tmonial__bubble p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.tmonial__meta {
+  margin: 8px 0 0 6px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+.tmonial__who {
+  font-weight: 600;
+  color: var(--ink);
+}
+.reviews__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 18px;
+}
+.reviews__dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: width 0.3s, background 0.3s;
+}
+.reviews__dots span.is-on {
+  width: 22px;
+  border-radius: 4px;
+  background: var(--red);
+}
+@media (max-width: 900px) {
+  .reviews__track {
+    grid-auto-columns: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 600px) {
+  .reviews__track {
+    grid-auto-columns: 86%;
+    gap: 14px;
+  }
+  .reviews__arrows {
+    display: none;
+  }
 }

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { HOURS_SUMMARY, RESTAURANT } from '../config'
 import Logo from './Logo'
 import SocialIcon from './SocialIcon'
+import legal from '../../content/legal.json'
 
 export default function Footer() {
   return (
@@ -35,6 +36,15 @@ export default function Footer() {
           <Link to="/about">About us</Link>
           <Link to="/careers">Careers</Link>
           <Link to="/#how-it-works">How ordering works</Link>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          {legal.pages.map((p) => (
+            <Link key={p.slug} to={`/legal/${p.slug}`}>
+              {p.title.replace(/ & Issue Resolution/, '')}
+            </Link>
+          ))}
         </div>
 
         <div>
