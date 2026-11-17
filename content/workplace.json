@@ -1,0 +1,50 @@
+{
+  "kicker": "Lunches · Meetings · Events · Corporate Wellness",
+  "headline": "All your team meals from one kitchen.",
+  "highlight": "team meals",
+  "subline": "Let Gourmet Gather nourish and power up your team!",
+  "intro": "Feed your team food they will actually look forward to. Perfect for office lunches, team meetings, events and corporate wellness programmes.",
+  "hashtag": "#YOURTEAMMUSTCHOPUYO",
+  "points": [
+    {
+      "icon": "convenience",
+      "title": "Convenience",
+      "text": "Hassle-free setup and delivery to your office"
+    },
+    {
+      "icon": "packaging",
+      "title": "Packaging",
+      "text": "Meals stay warm and fit for royalty"
+    },
+    {
+      "icon": "variety",
+      "title": "Variety",
+      "text": "Diverse South-South menu for all tastes"
+    },
+    {
+      "icon": "quality",
+      "title": "Quality",
+      "text": "Fresh, high-quality ingredients"
+    }
+  ],
+  "photos": [
+    {
+      "src": "/images/site/work-1.webp",
+      "alt": "Fried rice with goat meat and chicken in a takeaway pack"
+    },
+    {
+      "src": "/images/site/work-2.webp",
+      "alt": "A plate of peppered chicken"
+    },
+    {
+      "src": "/images/site/work-3.webp",
+      "alt": "Rows of packed Gourmet Gather office meals, labelled and ready to go"
+    }
+  ],
+  "menuNote": "Every meal comes with a drink. Where a meal says “pair with any protein”, choose your protein when you add it.",
+  "orderingTitle": "For corporate orders and weekly subscriptions",
+  "orderingNote": "Order before 9am for same-day lunch. We deliver to the Secretariat, Ewet Housing, Osongama, Shelter Afrique and everywhere in Uyo. Set your order to repeat weekly or monthly at checkout.",
+  "pdf": "/menus/gourmet-gather-workplace-menu.pdf",
+  "ctaTitle": "Ready to feed your team?",
+  "ctaText": "You run the office. We’ll take care of lunch."
+}

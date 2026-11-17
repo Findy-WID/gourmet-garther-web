@@ -29,7 +29,7 @@ export const SECTIONS = [
     id: 'corporate',
     name: 'Workplace',
     short: 'Office lunches, meetings and events',
-    long: 'Packed lunches for the team, trays for meetings and feasts for office parties. One-off or on a weekly or monthly schedule.',
+    long: 'Breakfast, lunch and specials for the whole team, ordered in one go. Download the menu, or order straight from the page.',
   },
 ]
 

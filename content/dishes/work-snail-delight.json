@@ -1,0 +1,20 @@
+{
+  "name": "Snail Delight – The Ibom Royal",
+  "section": "corporate",
+  "category": "Specials",
+  "price": 16000,
+  "unit": "",
+  "description": "Mighty Jollof / Native Rice with peppered snail, plantain and a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2150,
+  "choiceGroups": [
+    "work-rice-jn",
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Legend’s Breakfast – The Early Bird",
+  "section": "corporate",
+  "category": "Breakfast",
+  "price": 7500,
+  "unit": "",
+  "description": "Akara, pap, bread and boiled egg – neat, filling and office-ready with a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2020,
+  "choiceGroups": [
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

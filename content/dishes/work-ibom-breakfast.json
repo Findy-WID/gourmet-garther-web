@@ -1,0 +1,19 @@
+{
+  "name": "Ibom Breakfast – The Full Team",
+  "section": "corporate",
+  "category": "Breakfast",
+  "price": 8000,
+  "unit": "",
+  "description": "Fried yam, egg sauce and sausage bits – the perfect morning starter with a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2010,
+  "choiceGroups": [
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

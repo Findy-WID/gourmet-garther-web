@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, Navigate } from 'react-router-dom'
 import { SECTIONS, daysLabel, getItem } from '../data/menu'
 import { formatNaira } from '../config'
 import { useCart } from '../context/CartContext'
@@ -12,6 +12,8 @@ export default function Product() {
   const { id } = useParams()
   const item = getItem(id)
   if (!item) return <NotFound />
+  // Workplace dishes have no page of their own: everything is on /workplace
+  if (item.section === 'corporate') return <Navigate to="/workplace#wk-menu" replace />
   return <ProductView key={item.id} item={item} />
 }
 

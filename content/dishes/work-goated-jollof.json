@@ -1,0 +1,20 @@
+{
+  "name": "Goated Jollof – Mixer",
+  "section": "corporate",
+  "category": "Specials",
+  "price": 15000,
+  "unit": "",
+  "description": "Mighty Jollof rice crowned with tender, spicy asun (goat), plantain and a drink. Pair with any protein of your choice.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2140,
+  "choiceGroups": [
+    "work-protein",
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

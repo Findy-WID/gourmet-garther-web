@@ -1,0 +1,19 @@
+{
+  "name": "Ekpang Mama – The Original",
+  "section": "corporate",
+  "category": "Uyo Classics",
+  "price": 9500,
+  "unit": "",
+  "description": "Iconic Ekpang Nkukwo (cocoyam & water yam) in rich crayfish sauce with smoked fish and a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2110,
+  "choiceGroups": [
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

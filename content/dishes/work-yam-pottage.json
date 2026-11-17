@@ -1,0 +1,19 @@
+{
+  "name": "Yam Pottage – The Local",
+  "section": "corporate",
+  "category": "Uyo Classics",
+  "price": 13000,
+  "unit": "",
+  "description": "Rich Uyo-style yam pottage with beef, stockfish, vegetable and a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2120,
+  "choiceGroups": [
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

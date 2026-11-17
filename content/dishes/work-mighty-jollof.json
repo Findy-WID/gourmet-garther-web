@@ -1,0 +1,20 @@
+{
+  "name": "Mighty Jollof – The Uyo Classic",
+  "section": "corporate",
+  "category": "Rice Sets",
+  "price": 10000,
+  "unit": "",
+  "description": "Mighty Jollof with plantain and a drink. Pair with any protein of your choice.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2060,
+  "choiceGroups": [
+    "work-protein",
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

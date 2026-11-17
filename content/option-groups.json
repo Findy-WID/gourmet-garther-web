@@ -123,97 +123,6 @@
       ]
     },
     {
-      "id": "lunch-rice",
-      "name": "Lunch pack: rice",
-      "label": "Choose the rice",
-      "options": [
-        {
-          "label": "Party jollof",
-          "price": 0
-        },
-        {
-          "label": "Fried rice",
-          "price": 0
-        },
-        {
-          "label": "Half jollof, half fried",
-          "price": 0
-        },
-        {
-          "label": "Coconut rice",
-          "price": 500
-        }
-      ]
-    },
-    {
-      "id": "lunch-protein",
-      "name": "Lunch pack: protein",
-      "label": "Choose the protein",
-      "options": [
-        {
-          "label": "Chicken",
-          "price": 0
-        },
-        {
-          "label": "Turkey",
-          "price": 1500
-        },
-        {
-          "label": "Fried fish",
-          "price": 1000
-        }
-      ]
-    },
-    {
-      "id": "exec-main",
-      "name": "Executive box: main",
-      "label": "Choose the main",
-      "options": [
-        {
-          "label": "Party jollof",
-          "price": 0
-        },
-        {
-          "label": "Fried rice",
-          "price": 0
-        },
-        {
-          "label": "Ofada rice & ayamase",
-          "price": 1000
-        }
-      ]
-    },
-    {
-      "id": "chops-tray",
-      "name": "Small chops: tray size",
-      "label": "Tray size",
-      "options": [
-        {
-          "label": "50 pieces — about 10 people",
-          "price": 0
-        },
-        {
-          "label": "100 pieces — about 20 people",
-          "price": 32000
-        }
-      ]
-    },
-    {
-      "id": "feast-rice",
-      "name": "Party feast: rice",
-      "label": "Rice combination",
-      "options": [
-        {
-          "label": "Jollof + fried rice",
-          "price": 0
-        },
-        {
-          "label": "Jollof + coconut rice",
-          "price": 5000
-        }
-      ]
-    },
-    {
       "id": "combo-soup-1",
       "name": "Combo: soup choice",
       "label": "Choose your soup",
@@ -407,6 +316,117 @@
           "price": 0
         }
       ]
+    },
+    {
+      "name": "Workplace: drink",
+      "id": "work-drink",
+      "label": "Choose your drink",
+      "options": [
+        {
+          "label": "Water",
+          "price": 0
+        },
+        {
+          "label": "Coke",
+          "price": 0
+        },
+        {
+          "label": "Fanta",
+          "price": 0
+        },
+        {
+          "label": "Sprite",
+          "price": 0
+        },
+        {
+          "label": "Ribena",
+          "price": 0
+        },
+        {
+          "label": "Zobo",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "name": "Workplace: protein",
+      "id": "work-protein",
+      "label": "Choose your protein",
+      "options": [
+        {
+          "label": "Fresh Catfish",
+          "price": 0
+        },
+        {
+          "label": "Croaker Fish",
+          "price": 0
+        },
+        {
+          "label": "Chicken",
+          "price": 0
+        },
+        {
+          "label": "Beef",
+          "price": 0
+        },
+        {
+          "label": "Goat",
+          "price": 0
+        },
+        {
+          "label": "Snail",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "name": "Workplace: Fufu or Garri",
+      "id": "work-swallow-fg",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Fufu",
+          "price": 0
+        },
+        {
+          "label": "Garri",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "name": "Workplace: Semo, Fufu or Garri",
+      "id": "work-swallow-sfg",
+      "label": "Choose your swallow",
+      "options": [
+        {
+          "label": "Semo",
+          "price": 0
+        },
+        {
+          "label": "Fufu",
+          "price": 0
+        },
+        {
+          "label": "Garri",
+          "price": 0
+        }
+      ]
+    },
+    {
+      "name": "Workplace: Jollof or Native rice",
+      "id": "work-rice-jn",
+      "label": "Choose your rice",
+      "options": [
+        {
+          "label": "Jollof Rice",
+          "price": 0
+        },
+        {
+          "label": "Native Rice",
+          "price": 0
+        }
+      ]
     }
   ],
   "extras": [
@@ -560,74 +580,6 @@
         {
           "label": "Extra pounded yam",
           "price": 2500,
-          "note": ""
-        }
-      ]
-    },
-    {
-      "id": "lunch-extras",
-      "name": "Lunch pack: extras",
-      "max": 0,
-      "items": [
-        {
-          "label": "Dodo",
-          "price": 800,
-          "note": "per pack"
-        },
-        {
-          "label": "Moi moi",
-          "price": 1000,
-          "note": "per pack"
-        },
-        {
-          "label": "Bottled water",
-          "price": 300,
-          "note": "per pack"
-        },
-        {
-          "label": "Soft drink",
-          "price": 600,
-          "note": "per pack"
-        }
-      ]
-    },
-    {
-      "id": "chops-extras",
-      "name": "Small chops: extras",
-      "max": 0,
-      "items": [
-        {
-          "label": "Extra dipping sauce",
-          "price": 1500,
-          "note": ""
-        }
-      ]
-    },
-    {
-      "id": "breakfast-extras",
-      "name": "Breakfast pack: extras",
-      "max": 0,
-      "items": [
-        {
-          "label": "Fruit juice",
-          "price": 700,
-          "note": "per pack"
-        }
-      ]
-    },
-    {
-      "id": "feast-extras",
-      "name": "Party feast: extras",
-      "max": 0,
-      "items": [
-        {
-          "label": "Crate of soft drinks",
-          "price": 9000,
-          "note": ""
-        },
-        {
-          "label": "Pack of bottled water",
-          "price": 3500,
           "note": ""
         }
       ]

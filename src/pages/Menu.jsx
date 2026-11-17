@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
 import { SECTIONS, groupsIn, itemsIn } from '../data/menu'
 import ItemCard from '../components/ItemCard'
 import categories from '../../content/categories.json'
 
 export default function Menu() {
   const [params, setParams] = useSearchParams()
+  const navigate = useNavigate()
   const tab = SECTIONS.some((s) => s.id === params.get('tab')) ? params.get('tab') : 'plates'
   const [group, setGroup] = useState('All')
   const [query, setQuery] = useState('')
@@ -23,10 +24,13 @@ export default function Menu() {
   }, [tab, group, query])
 
   function switchTab(id) {
+    if (id === 'corporate') return navigate('/workplace')
     setGroup('All')
     setQuery('')
     setParams({ tab: id })
   }
+
+  if (tab === 'corporate') return <Navigate to="/workplace" replace />
 
   return (
     <div className="page">

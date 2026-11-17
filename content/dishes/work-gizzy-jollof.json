@@ -1,0 +1,20 @@
+{
+  "name": "Gizzy Jollof – Starter",
+  "section": "corporate",
+  "category": "Specials",
+  "price": 13500,
+  "unit": "",
+  "description": "Mighty Jollof rice piled high with gizzdodo and a drink. Pair with any protein of your choice.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2130,
+  "choiceGroups": [
+    "work-protein",
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

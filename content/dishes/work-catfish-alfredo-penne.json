@@ -1,0 +1,19 @@
+{
+  "name": "Catfish Alfredo Penne – The Ultimate",
+  "section": "corporate",
+  "category": "Pasta Sets",
+  "price": 15500,
+  "unit": "",
+  "description": "Creamy catfish-spiced alfredo penne with smoked catfish bits and a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2090,
+  "choiceGroups": [
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

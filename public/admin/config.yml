@@ -95,9 +95,13 @@ collections:
           - Special dishes
           - Stew & Ekpang
           - Bulk combos
-          - Lunch packs
-          - Meetings & events
-        hint: 'The heading it sits under on the menu. Plates use Rice, Soups, Pasta, Pepper soups, Sauces & stews, Porridge, Sides & combos, Special dishes. Bowls & bulk use Soups, Rice, Stew & Ekpang, Bulk combos. Workplace uses Lunch packs, Meetings & events.'
+          - Breakfast
+          - Soup and Swallow
+          - Rice Sets
+          - Pasta Sets
+          - Uyo Classics
+          - Specials
+        hint: 'The heading it sits under on the menu. Plates use Rice, Soups, Pasta, Pepper soups, Sauces & stews, Porridge, Sides & combos, Special dishes. Bowls & bulk use Soups, Rice, Stew & Ekpang, Bulk combos. Workplace uses Breakfast, Soup and Swallow, Rice Sets, Pasta Sets, Uyo Classics, Specials (workplace dishes need no photo).'
       - { label: Description, name: description, widget: text, required: false, hint: Optional. One or two sentences shown on the dish page. }
       - label: What’s included
         name: includes
@@ -270,6 +274,49 @@ collections:
               - { label: Requirements, name: requirements, widget: list, required: false, field: { label: Requirement, name: item, widget: string } }
               - { label: Work schedule, name: schedule, widget: string, required: false }
               - { label: Job description link (Google Doc), name: jdLink, widget: string, required: false }
+
+  # ── Workplace page ────────────────────────────────────────
+  - name: workplace
+    label: Workplace page
+    description: 'The words on the Workplace page and the downloadable menu. The workplace dishes themselves are under Dishes (Menu = Workplace); drink and protein lists are under Proteins & options → “Workplace: drink” / “Workplace: protein”.'
+    files:
+      - name: workplace
+        label: Workplace page
+        file: content/workplace.json
+        format: json
+        fields:
+          - { label: Small line above the headline, name: kicker, widget: string, required: false }
+          - { label: Headline, name: headline, widget: string }
+          - { label: Words to colour in the headline, name: highlight, widget: string, required: false, hint: Must match words in the headline exactly. }
+          - { label: Line under the headline, name: subline, widget: string, required: false }
+          - label: Selling points
+            name: points
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Icon, name: icon, widget: select, options: [convenience, packaging, variety, quality] }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
+          - label: Photos (up to 3)
+            name: photos
+            widget: list
+            max: 3
+            fields:
+              - { label: Photo, name: src, widget: image }
+              - { label: Describe the photo, name: alt, widget: string, required: false }
+          - { label: Intro paragraph, name: intro, widget: text, required: false }
+          - { label: Hashtag, name: hashtag, widget: string, required: false }
+          - { label: Note above the menu, name: menuNote, widget: text, required: false }
+          - { label: Ordering note title, name: orderingTitle, widget: string, required: false }
+          - { label: Ordering note, name: orderingNote, widget: text, required: false }
+          - label: Downloadable menu (PDF)
+            name: pdf
+            widget: file
+            media_folder: /public/menus
+            public_folder: /menus
+            hint: The PDF people get when they tap Download Menu. Upload a new one to replace it.
+          - { label: Closing headline, name: ctaTitle, widget: string, required: false }
+          - { label: Closing line, name: ctaText, widget: string, required: false }
 
   # ── Customer reviews ──────────────────────────────────────
   - name: reviews

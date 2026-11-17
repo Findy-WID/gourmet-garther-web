@@ -1,0 +1,21 @@
+{
+  "name": "Soup and Swallow – The Staple",
+  "section": "corporate",
+  "category": "Soup and Swallow",
+  "price": 7500,
+  "unit": "",
+  "description": "Garri / Fufu with Edikang Ikong Soup and a drink. Pair with any protein of your choice.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2040,
+  "choiceGroups": [
+    "work-swallow-fg",
+    "work-protein",
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

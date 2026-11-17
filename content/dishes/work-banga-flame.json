@@ -1,0 +1,19 @@
+{
+  "name": "Banga Flame – The South-South Pot",
+  "section": "corporate",
+  "category": "Rice Sets",
+  "price": 12500,
+  "unit": "",
+  "description": "Fiery Banga rice with rich palm-nut sauce, smoked fish, plantain and a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2080,
+  "choiceGroups": [
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}

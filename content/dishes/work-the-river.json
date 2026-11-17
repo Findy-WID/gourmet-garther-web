@@ -1,0 +1,20 @@
+{
+  "name": "Soup and Swallow – The River",
+  "section": "corporate",
+  "category": "Soup and Swallow",
+  "price": 9000,
+  "unit": "",
+  "description": "Semo / Fufu / Garri with Fisherman Soup and a drink.",
+  "image": "",
+  "includes": [],
+  "popular": false,
+  "available": true,
+  "minQty": 1,
+  "sort": 2050,
+  "choiceGroups": [
+    "work-swallow-sfg",
+    "work-drink"
+  ],
+  "extrasGroup": "",
+  "placeholder": false
+}
